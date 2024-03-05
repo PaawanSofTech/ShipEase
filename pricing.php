@@ -7,7 +7,7 @@ include('includes/config.php');
 <html lang="en">
 
 <head>
-	<title>Autoroad - Free Bootstrap 4 Template by Colorlib</title>
+	<title>ShipEase - Navigating the Waves of Convenience</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -47,7 +47,7 @@ include('includes/config.php');
 					<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
 									class="ion-ios-arrow-forward"></i></a></span> <span>Pricing <i
 								class="ion-ios-arrow-forward"></i></span></p>
-					<h1 class="mb-3 bread">Car Rates Pricing</h1>
+					<h1 class="mb-3 bread">Cargo Rates Pricing</h1>
 				</div>
 			</div>
 		</div>
