@@ -8,7 +8,7 @@ include('includes/config.php');
 <html lang="en">
 
 <head>
-  <title>Autoroad - Free Bootstrap 4 Template by Colorlib</title>
+  <title>ShipEase - Navigating the Waves of Convenience</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -40,7 +40,7 @@ include('includes/config.php');
   <?php include 'includes/navbar.php'; ?>
   <!-- END nav -->
 
-  <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/bg_2.jpg');"
+  <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/banner_5.jpg');"
     data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
@@ -247,7 +247,7 @@ include('includes/config.php');
     <div class="container">
       <div class="row no-gutters">
         <div class="col-md-6 p-md-5 img img-2 d-flex justify-content-center align-items-center"
-          style="background-image: url(images/about.jpg);">
+          style="background-image: url(images/banner_1.jpg);">
         </div>
         <div class="col-md-6 wrap-about py-md-5 ftco-animate">
           <div class="heading-section mb-5 pl-md-5">
