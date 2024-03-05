@@ -372,10 +372,10 @@ include('includes/config.php');
                         <div class="white_box card_height_100">
                             <div class="box_header">
                                 <div class="main-title" style="display: inline-flex;">
-                                    <h3 class="m-0">Recent Doubts</h3>
+                                    <h3 class="m-0">Recent Orders</h3>
                                 </div>
                                 <div class="ask-doubt-btn-container" style="display: inline-flex;">
-                                    <button class="ask-doubt-btn">Ask Doubt</button>
+                                    <button class="ask-doubt-btn">Check Orders</button>
                                 </div>
                             </div>
                             <div class="Activity_timeline">
