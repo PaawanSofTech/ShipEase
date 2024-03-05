@@ -7,14 +7,22 @@
 			</button>
 
 			<div class="collapse navbar-collapse" id="ftco-nav">
-    		<ul class="navbar-nav ml-auto">
-				<li class="nav-item <?php if(basename($_SERVER['PHP_SELF']) == 'index.php') echo 'active'; ?>"><a href="index.php" class="nav-link">Home</a></li>
-				<li class="nav-item <?php if(basename($_SERVER['PHP_SELF']) == 'about.php') echo 'active'; ?>"><a href="about.php" class="nav-link">About</a></li>
-				<li class="nav-item <?php if(basename($_SERVER['PHP_SELF']) == 'pricing.php') echo 'active'; ?>"><a href="pricing.php" class="nav-link">Pricing</a></li>
-				<li class="nav-item <?php if(basename($_SERVER['PHP_SELF']) == 'car.php') echo 'active'; ?>"><a href="car.php" class="nav-link">Our Car</a></li>
-				<li class="nav-item <?php if(basename($_SERVER['PHP_SELF']) == 'blog.php') echo 'active'; ?>"><a href="blog.php" class="nav-link">Blog</a></li>
-				<li class="nav-item <?php if(basename($_SERVER['PHP_SELF']) == 'contact.php') echo 'active'; ?>"><a href="contact.php" class="nav-link">Contact</a></li>
-			</ul>
+    			<ul class="navbar-nav ml-auto">
+					<li class="nav-item <?php if(basename($_SERVER['PHP_SELF']) == 'index.php') echo 'active'; ?>"><a href="index.php" class="nav-link">Home</a></li>
+					<li class="nav-item <?php if(basename($_SERVER['PHP_SELF']) == 'about.php') echo 'active'; ?>"><a href="about.php" class="nav-link">About</a></li>
+					<li class="nav-item <?php if(basename($_SERVER['PHP_SELF']) == 'pricing.php') echo 'active'; ?>"><a href="pricing.php" class="nav-link">Pricing</a></li>
+					<li class="nav-item <?php if(basename($_SERVER['PHP_SELF']) == 'car.php') echo 'active'; ?>"><a href="car.php" class="nav-link">Our Car</a></li>
+					<li class="nav-item <?php if(basename($_SERVER['PHP_SELF']) == 'blog.php') echo 'active'; ?>"><a href="blog.php" class="nav-link">Blog</a></li>
+					<li class="nav-item <?php if(basename($_SERVER['PHP_SELF']) == 'contact.php') echo 'active'; ?>"><a href="contact.php" class="nav-link">Contact</a></li>
+					
+					<li class="nav-item" style="box">
+					
+					</li>
+    			</ul>
+			</div>
+			
+			<div class="h3_header-btn d-none d-sm-block">';
+                <a href="sign-in.php" class="header-btn theme-btn theme-btn-medium theme-btn-3">Sign In<i class="fa-light fa-arrow-up-right"></i></a>';
 			</div>
 
 		</div>

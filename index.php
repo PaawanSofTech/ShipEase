@@ -45,16 +45,17 @@
 			<div class="row no-gutters slider-text justify-content-start align-items-center">
 				<div class="col-lg-6 col-md-6 ftco-animate d-flex align-items-end">
 					<div class="text">
-						<h1 class="mb-4">Discover<span> Seamless Ship Port Transportation Navigating the Waves of Convenience</span> <span>rent a car</span></h1>
-						<p style="font-size: 18px;">A small river named Duden flows by their place and supplies it with
-							the necessary regelialia. It is a paradisematic country, in which roasted part</p>
-						<a href="https://vimeo.com/45830194"
+						<h1 class="mb-4">Navigating <span> the Waves of Convenience</span></h1>
+						<p style="font-size: 18px;">
+						
+						Sail smoothly through the logistics of your voyage and experience the ease of maritime transport with us.</p>
+						<a href="	"
 							class="icon-wrap popup-vimeo d-flex align-items-center mt-4">
 							<div class="icon d-flex align-items-center justify-content-center">
 								<span class="ion-ios-play"></span>
 							</div>
 							<div class="heading-title ml-5">
-								<span>Easy steps for renting a car</span>
+								<span>Discover Seamless Ship Port Transportation</span>
 							</div>
 						</a>
 					</div>
