@@ -1,9 +1,17 @@
 <?php
-    $con = mysqli_connect("localhost","root","","shipping_detail");
-    // Check connection
-    if (mysqli_connect_errno()){
-        echo "Failed to connect to MySQL: " . mysqli_connect_error();
-    }
+// Assuming you have a database connection established
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "shipping_detail";
+
+// Create a connection
+$connection = new mysqli($servername, $username, $password, $dbname);
+
+// Check the connection
+if ($connection->connect_error) {
+    die("Connection failed: " . $connection->connect_error);
+}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve form data
@@ -12,12 +20,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Insert data into the database
     $query = "INSERT INTO shipping_details (pickup_location, dropoff_location) VALUES ('$pickup_location', '$dropoff_location')";
-    
-    // Execute the query
-    mysqli_query($connection, $query);
 
-    // Optionally, you can redirect the user to a thank-you page or perform other actions
-    // header("Location: thank_you.php");
-    // exit();
+    // Execute the query
+    $result = $connection->query($query);
+
+    // Display a pop-up message
+    echo '<script>alert("Shipping details saved successfully!");</script>';
 }
+
+// Close the database connection
+$connection->close();
 ?>
+
+<!-- Redirect to index.php after displaying the pop-up -->
+<script>
+    window.location.href = 'index.php';
+</script>
