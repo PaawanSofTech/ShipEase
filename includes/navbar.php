@@ -9,25 +9,31 @@
 		<div class="collapse navbar-collapse" id="ftco-nav">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item <?php if (basename($_SERVER['PHP_SELF']) == 'index.php')
-					echo 'active'; ?>"><a
-						href="index.php" class="nav-link">Home</a></li>
-				
+					echo 'active'; ?>"><a href="index.php" class="nav-link">Home</a></li>
+
 				<li class="nav-item <?php if (basename($_SERVER['PHP_SELF']) == 'pricing.php')
-					echo 'active'; ?>"><a
-						href="pricing.php" class="nav-link">Pricing</a></li>
+					echo 'active'; ?>"><a href="pricing.php" class="nav-link">Pricing</a></li>
 				<li class="nav-item <?php if (basename($_SERVER['PHP_SELF']) == 'services.php')
-					echo 'active'; ?>"><a
-						href="services.php" class="nav-link">Service</a></li>
-				
+					echo 'active'; ?>"><a href="services.php" class="nav-link">Service</a></li>
+
 				<li class="nav-item <?php if (basename($_SERVER['PHP_SELF']) == 'contact.php')
-					echo 'active'; ?>"><a
-						href="contact.php" class="nav-link">Contact</a></li>
+					echo 'active'; ?>"><a href="contact.php" class="nav-link">Contact</a></li>
 
 			</ul>
 		</div>
 
-		<div class="h3_header-btn d-none d-sm-block" style="background-color: #FC983C; border-radius: 12px">
-			<a href="sign-in.php" class="btn" style="color: white">Log In <i class="fa-light fa-arrow-up-right"></i></a>
+		<div class="login_bt">
+			<?php
+			session_start();
+			if (isset($_SESSION['username'])) {
+				echo '<p style=" margin-bottom: -3px;">Hello, ' . $_SESSION['username'] . '</p>';
+				echo '<a style="margin-left: 50px;" href="logout.php">Logout</a>';
+			} else {
+
+				echo '<a href="login.php"><span class="user_icon"><i class="fa fa-user" aria-hidden="true"></i></span>Login</a>
+                             ';
+			}
+			?>
 		</div>
 	</div>
 </nav>

@@ -1,7 +1,47 @@
 <?php
 session_start();
 error_reporting(0);
-include('includes/config.php');
+include('../includes/config.php');
+
+// Include your database configuration file
+include 'config.php';
+
+// Check if the form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Retrieve form data
+    $departureLocation = sanitize_input($_POST["departureLocation"]);
+    $arrivalLocation = sanitize_input($_POST["arrivalLocation"]);
+    $departureDate = sanitize_input($_POST["departureDate"]);
+    $arrivalDate = sanitize_input($_POST["arrivalDate"]);
+    $containerType = sanitize_input($_POST["containerType"]);
+    $price = sanitize_input($_POST["price"]);
+
+    // Insert data into the services table
+    $stmt = $dbh->prepare("INSERT INTO services (departure, arrival, departure_date, arrival_date, cargo_size, price) VALUES (?, ?, ?, ?, ?, ?)");
+    $stmt->bindParam(1, $departureLocation);
+    $stmt->bindParam(2, $arrivalLocation);
+    $stmt->bindParam(3, $departureDate);
+    $stmt->bindParam(4, $arrivalDate);
+    $stmt->bindParam(5, $containerType);
+    $stmt->bindParam(6, $price);
+
+    // Execute the statement
+    if ($stmt->execute()) {
+        echo "Data has been saved successfully.";
+    } else {
+        echo "Error: " . $stmt->errorInfo()[2];
+    }
+}
+
+// Function to sanitize form inputs
+function sanitize_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
+
 ?>
 
 
@@ -209,50 +249,7 @@ include('includes/config.php');
                         </div>
                     </div>
 
-                    <?php
-                    // Define variables to store form data
-                    $departureLocation = $arrivalLocation = $departureDate = $arrivalDate = $containerType = $price = $companyID = "";
-
-                    // Check if the form is submitted
-                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                        // Retrieve form data
-                        $departureLocation = sanitize_input($_POST["departureLocation"]);
-                        $arrivalLocation = sanitize_input($_POST["arrivalLocation"]);
-                        $departureDate = sanitize_input($_POST["departureDate"]);
-                        $arrivalDate = sanitize_input($_POST["arrivalDate"]);
-                        $containerType = sanitize_input($_POST["containerType"]);
-                        $price = sanitize_input($_POST["price"]);
-
-                        // Generate a random 6-digit company ID
-                        $companyID = generate_company_id();
-
-                        // Add your logic to store the form data in the database or perform other actions
-                        // For demonstration, let's print the data
-                        echo "<h2>Form Data:</h2>";
-                        echo "<p>Departure Location: $departureLocation</p>";
-                        echo "<p>Arrival Location: $arrivalLocation</p>";
-                        echo "<p>Departure Date: $departureDate</p>";
-                        echo "<p>Arrival Date: $arrivalDate</p>";
-                        echo "<p>Container Type: $containerType</p>";
-                        echo "<p>Price: $price</p>";
-                        echo "<p>Company ID: $companyID</p>";
-                    }
-
-                    // Function to sanitize form inputs
-                    function sanitize_input($data)
-                    {
-                        $data = trim($data);
-                        $data = stripslashes($data);
-                        $data = htmlspecialchars($data);
-                        return $data;
-                    }
-
-                    // Function to generate a random 6-digit company ID
-                    function generate_company_id()
-                    {
-                        return str_pad(mt_rand(1, 999999), 6, '0', STR_PAD_LEFT);
-                    }
-                    ?>
+                    
 
                     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                         <!-- Your form HTML here -->

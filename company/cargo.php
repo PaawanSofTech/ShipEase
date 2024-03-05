@@ -1,27 +1,16 @@
 <?php
 session_start();
 error_reporting(0);
-include('includes/config.php');
-?>
-<?php
-
-// Simulated data - Replace this with your actual data retrieval logic
-$data = [
-    ["serialNo" => 1, "cargoType" => "Container", "departureCity" => "New York", "arrivalCity" => "Los Angeles", "ship" => "Cargo Ship XYZ", "departureDate" => "2024-03-05", "arrivalDate" => "2024-03-15"],
-    // Add more data as needed
-];
-
-// Filter data based on the search term
-if (isset($_GET['term'])) {
-    $term = strtolower($_GET['term']);
-    $filteredData = array_filter($data, function ($item) use ($term) {
-        return strpos(strtolower($item['cargoType']), $term) !== false;
-    });
-
-    echo json_encode(array_values($filteredData));
-} else {
-    echo json_encode($data);
+include('../includes/config.php');
+try {
+    $stmt = $dbh->prepare("SELECT departure, arrival, departure_date, arrival_date, cargo_size, price FROM services");
+    $stmt->execute();
+    $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    exit("Error: " . $e->getMessage());
 }
+
+
 ?>
 
 
@@ -176,73 +165,70 @@ if (isset($_GET['term'])) {
                                 </a>
                             </div>
 
-                            <table id="cargoTable">
-                                <thead>
-                                    <tr>
-                                        <th>Serial No.</th>
-                                        <th>Cargo Type</th>
-                                        <th>Departure City</th>
-                                        <th>Arrival City</th>
-                                        <th>Ship</th>
-                                        <th>Departure Date</th>
-                                        <th>Arrival Date</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="tableBody">
-                                    <!-- Data will be dynamically loaded here -->
-                                </tbody>
-                            </table>
+                            <table>
+    <thead>
+        <tr>
+            <th>Departure</th>
+            <th>Arrival</th>
+            <th>Departure Date</th>
+            <th>Arrival Date</th>
+            <th>Cargo Size</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($data as $row): ?>
+            <tr>
+                <td><?= $row['departure']; ?></td>
+                <td><?= $row['arrival']; ?></td>
+                <td><?= $row['departure_date']; ?></td>
+                <td><?= $row['arrival_date']; ?></td>
+                <td><?= $row['cargo_size']; ?></td>
+                <td><?= $row['price']; ?></td>
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
 
-                            <script>
-                                const data = [
-                                    { "serialNo": 1, "cargoType": "Container", "departureCity": "New York", "arrivalCity": "Los Angeles", "ship": "Cargo Ship XYZ", "departureDate": "2024-03-05", "arrivalDate": "2024-03-15" },
-                                    { "serialNo": 1, "cargoType": "Container", "departureCity": "New York", "arrivalCity": "Los Angeles", "ship": "Cargo Ship XYZ", "departureDate": "2024-03-05", "arrivalDate": "2024-03-15" },
-                                    { "serialNo": 1, "cargoType": "Container", "departureCity": "New York", "arrivalCity": "Los Angeles", "ship": "Cargo Ship XYZ", "departureDate": "2024-03-05", "arrivalDate": "2024-03-15" },
-                                    { "serialNo": 1, "cargoType": "Container", "departureCity": "New York", "arrivalCity": "Los Angeles", "ship": "Cargo Ship XYZ", "departureDate": "2024-03-05", "arrivalDate": "2024-03-15" },
-                                    { "serialNo": 1, "cargoType": "Container", "departureCity": "New York", "arrivalCity": "Los Angeles", "ship": "Cargo Ship XYZ", "departureDate": "2024-03-05", "arrivalDate": "2024-03-15" },
-                                    { "serialNo": 1, "cargoType": "Container", "departureCity": "New York", "arrivalCity": "Los Angeles", "ship": "Cargo Ship XYZ", "departureDate": "2024-03-05", "arrivalDate": "2024-03-15" },
-                                    { "serialNo": 1, "cargoType": "Container", "departureCity": "New York", "arrivalCity": "Los Angeles", "ship": "Cargo Ship XYZ", "departureDate": "2024-03-05", "arrivalDate": "2024-03-15" },
-                                    // Add more data as needed
-                                ];
+<script>
+    const data = <?php echo json_encode($data); ?>;
 
-                                // Initialize the table with all data
-                                displaySearchResults(data);
+    // Initialize the table with all data
+    displaySearchResults(data);
 
-                                document.getElementById('searchInput').addEventListener('input', function () {
-                                    const searchTerm = this.value.toLowerCase();
-                                    const filteredData = data.filter(item => item.cargoType.toLowerCase().includes(searchTerm));
-                                    displaySearchResults(filteredData);
-                                });
+    document.getElementById('searchInput').addEventListener('input', function () {
+        const searchTerm = this.value.toLowerCase();
+        const filteredData = data.filter(item => item.cargo_size.toLowerCase().includes(searchTerm));
+        displaySearchResults(filteredData);
+    });
 
-                                function displaySearchResults(data) {
-                                    const tableBody = document.getElementById('tableBody');
-                                    tableBody.innerHTML = '';
+    function displaySearchResults(data) {
+        const tableBody = document.getElementById('tableBody');
+        tableBody.innerHTML = '';
 
-                                    data.forEach(item => {
-                                        const row = document.createElement('tr');
-                                        row.innerHTML = `
-                <td>${item.serialNo}</td>
-                <td>${item.cargoType}</td>
-                <td>${item.departureCity}</td>
-                <td>${item.arrivalCity}</td>
-                <td>${item.ship}</td>
-                <td>${item.departureDate}</td>
-                <td>${item.arrivalDate}</td>
+        data.forEach(item => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${item.departure}</td>
+                <td>${item.arrival}</td>
+                <td>${item.departure_date}</td>
+                <td>${item.arrival_date}</td>
+                <td>${item.cargo_size}</td>
+                <td>${item.price}</td>
                 <td class="action-icons">
                     <a href="#" title="Edit">✎</a>
                     <a href="#" title="Delete">🗑</a>
                 </td>
             `;
-                                        tableBody.appendChild(row);
-                                    });
-                                }
+            tableBody.appendChild(row);
+        });
+    }
 
-                                function addContainers() {
-                                    // Implement the logic to add containers here
-                                    alert('Add Containers functionality to be implemented.');
-                                }
-                            </script>
+    function addContainers() {
+        // Implement the logic to add containers here
+        alert('Add Containers functionality to be implemented.');
+    }
+</script>
 
                         </div>
                     </div>
