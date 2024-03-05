@@ -3,26 +3,6 @@ session_start();
 error_reporting(0);
 include('includes/config.php');
 ?>
-<?php
-
-// Simulated data - Replace this with your actual data retrieval logic
-$data = [
-    ["serialNo" => 1, "cargoType" => "Container", "departureCity" => "New York", "arrivalCity" => "Los Angeles", "ship" => "Cargo Ship XYZ", "departureDate" => "2024-03-05", "arrivalDate" => "2024-03-15"],
-    // Add more data as needed
-];
-
-// Filter data based on the search term
-if (isset($_GET['term'])) {
-    $term = strtolower($_GET['term']);
-    $filteredData = array_filter($data, function ($item) use ($term) {
-        return strpos(strtolower($item['cargoType']), $term) !== false;
-    });
-
-    echo json_encode(array_values($filteredData));
-} else {
-    echo json_encode($data);
-}
-?>
 
 
 <!DOCTYPE html>
@@ -69,72 +49,130 @@ if (isset($_GET['term'])) {
     <link rel="stylesheet" href="css/style1.css">
     <link rel="stylesheet" href="css/colors/default.css" id="colorSkinCSS">
     <style>
-        .container-option {
-            margin-bottom: 20px;
+        .round-card {
+            width: 12rem;
+            height: 12rem;
+            border-radius: 50%;
+            text-align: center;
+            padding: 2rem;
+            overflow: hidden;
+        }
+
+        .count-wrapper {
+            position: relative;
+        }
+
+        .count {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .count-description {
+            font-size: 1rem;
+            color: #fff;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 320px) {
+            .round-card {
+                width: 8rem;
+                height: 8rem;
+                padding: 1.5rem;
+            }
+
+            .count {
+                font-size: 2rem;
+            }
+
+            .count-description {
+                font-size: 0.875rem;
+                margin-top: 0.5rem;
+            }
+        }
+
+        /* Animation */
+        @keyframes count-up {
+            from {
+                transform: translateY(1rem);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .count {
+            animation: count-up 1s ease-out;
+        }
+    </style>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            width: 80%; /* Adjust the width as needed */
+            height: 100vh;
         }
 
-        .search-input {
+        form {
+            width: 80%;
+            /* Adjust the width as needed */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-section {
+            width: calc(33.33% - 20px);
+            /* 33.33% width with some spacing */
+            margin-bottom: 20px;
+        }
+
+        .form-section label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-section input,
+        .form-section select {
+            width: 100%;
             padding: 10px;
-            width: 75%; /* 3/4 width */
             box-sizing: border-box;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
 
-        .container-option a {
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .container-option button {
+        .form-section input[type="date"] {
+            appearance: none;
             padding: 10px;
-            box-sizing: border-box;
-            background-color: #4CAF50;
-            color: white;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #007BFF;
+            color: #fff;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            transition: background-color 0.3s ease;
         }
 
-        .container-option button:hover {
-            background-color: #45a049;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        th, td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-
-        .action-icons {
-            display: flex;
-            justify-content: space-around;
-        }
-
-        .action-icons a {
-            text-decoration: none;
-            color: #333;
-            cursor: pointer;
-        }
-
-        @media only screen and (max-width: 600px) {
-            /* Responsive styles for small screens */
-            .search-input,
-            .container-option button {
-                width: 100%;
-            }
+        button:hover {
+            background-color: #0056b3;
         }
     </style>
 
@@ -159,7 +197,7 @@ if (isset($_GET['term'])) {
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="dashboard_header_title">
-                                        <h3>Container Dashboard</h3>
+                                        <h3>Company Dashboard</h3>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
@@ -168,84 +206,95 @@ if (isset($_GET['term'])) {
                                     </div>
                                 </div>
                             </div>
-                            <div class="container-option">
-                                <input type="text" class="search-input" id="searchInput"
-                                    placeholder="Search by Cargo Type">
-                                <a href="add_container.php">
-                                    <button>Add Containers</button>
-                                </a>
-                            </div>
-
-                            <table id="cargoTable">
-                                <thead>
-                                    <tr>
-                                        <th>Serial No.</th>
-                                        <th>Cargo Type</th>
-                                        <th>Departure City</th>
-                                        <th>Arrival City</th>
-                                        <th>Ship</th>
-                                        <th>Departure Date</th>
-                                        <th>Arrival Date</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="tableBody">
-                                    <!-- Data will be dynamically loaded here -->
-                                </tbody>
-                            </table>
-
-                            <script>
-                                const data = [
-                                    { "serialNo": 1, "cargoType": "Container", "departureCity": "New York", "arrivalCity": "Los Angeles", "ship": "Cargo Ship XYZ", "departureDate": "2024-03-05", "arrivalDate": "2024-03-15" },
-                                    { "serialNo": 1, "cargoType": "Container", "departureCity": "New York", "arrivalCity": "Los Angeles", "ship": "Cargo Ship XYZ", "departureDate": "2024-03-05", "arrivalDate": "2024-03-15" },
-                                    { "serialNo": 1, "cargoType": "Container", "departureCity": "New York", "arrivalCity": "Los Angeles", "ship": "Cargo Ship XYZ", "departureDate": "2024-03-05", "arrivalDate": "2024-03-15" },
-                                    { "serialNo": 1, "cargoType": "Container", "departureCity": "New York", "arrivalCity": "Los Angeles", "ship": "Cargo Ship XYZ", "departureDate": "2024-03-05", "arrivalDate": "2024-03-15" },
-                                    { "serialNo": 1, "cargoType": "Container", "departureCity": "New York", "arrivalCity": "Los Angeles", "ship": "Cargo Ship XYZ", "departureDate": "2024-03-05", "arrivalDate": "2024-03-15" },
-                                    { "serialNo": 1, "cargoType": "Container", "departureCity": "New York", "arrivalCity": "Los Angeles", "ship": "Cargo Ship XYZ", "departureDate": "2024-03-05", "arrivalDate": "2024-03-15" },
-                                    { "serialNo": 1, "cargoType": "Container", "departureCity": "New York", "arrivalCity": "Los Angeles", "ship": "Cargo Ship XYZ", "departureDate": "2024-03-05", "arrivalDate": "2024-03-15" },
-                                    // Add more data as needed
-                                ];
-
-                                // Initialize the table with all data
-                                displaySearchResults(data);
-
-                                document.getElementById('searchInput').addEventListener('input', function () {
-                                    const searchTerm = this.value.toLowerCase();
-                                    const filteredData = data.filter(item => item.cargoType.toLowerCase().includes(searchTerm));
-                                    displaySearchResults(filteredData);
-                                });
-
-                                function displaySearchResults(data) {
-                                    const tableBody = document.getElementById('tableBody');
-                                    tableBody.innerHTML = '';
-
-                                    data.forEach(item => {
-                                        const row = document.createElement('tr');
-                                        row.innerHTML = `
-                <td>${item.serialNo}</td>
-                <td>${item.cargoType}</td>
-                <td>${item.departureCity}</td>
-                <td>${item.arrivalCity}</td>
-                <td>${item.ship}</td>
-                <td>${item.departureDate}</td>
-                <td>${item.arrivalDate}</td>
-                <td class="action-icons">
-                    <a href="#" title="Edit">✎</a>
-                    <a href="#" title="Delete">🗑</a>
-                </td>
-            `;
-                                        tableBody.appendChild(row);
-                                    });
-                                }
-
-                                function addContainers() {
-                                    // Implement the logic to add containers here
-                                    alert('Add Containers functionality to be implemented.');
-                                }
-                            </script>
-
                         </div>
                     </div>
+
+                    <?php
+                    // Define variables to store form data
+                    $departureLocation = $arrivalLocation = $departureDate = $arrivalDate = $containerType = $price = $companyID = "";
+
+                    // Check if the form is submitted
+                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                        // Retrieve form data
+                        $departureLocation = sanitize_input($_POST["departureLocation"]);
+                        $arrivalLocation = sanitize_input($_POST["arrivalLocation"]);
+                        $departureDate = sanitize_input($_POST["departureDate"]);
+                        $arrivalDate = sanitize_input($_POST["arrivalDate"]);
+                        $containerType = sanitize_input($_POST["containerType"]);
+                        $price = sanitize_input($_POST["price"]);
+
+                        // Generate a random 6-digit company ID
+                        $companyID = generate_company_id();
+
+                        // Add your logic to store the form data in the database or perform other actions
+                        // For demonstration, let's print the data
+                        echo "<h2>Form Data:</h2>";
+                        echo "<p>Departure Location: $departureLocation</p>";
+                        echo "<p>Arrival Location: $arrivalLocation</p>";
+                        echo "<p>Departure Date: $departureDate</p>";
+                        echo "<p>Arrival Date: $arrivalDate</p>";
+                        echo "<p>Container Type: $containerType</p>";
+                        echo "<p>Price: $price</p>";
+                        echo "<p>Company ID: $companyID</p>";
+                    }
+
+                    // Function to sanitize form inputs
+                    function sanitize_input($data)
+                    {
+                        $data = trim($data);
+                        $data = stripslashes($data);
+                        $data = htmlspecialchars($data);
+                        return $data;
+                    }
+
+                    // Function to generate a random 6-digit company ID
+                    function generate_company_id()
+                    {
+                        return str_pad(mt_rand(1, 999999), 6, '0', STR_PAD_LEFT);
+                    }
+                    ?>
+
+                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                        <!-- Your form HTML here -->
+
+                        <!-- Part 1: Departure and Arrival Locations -->
+                        <div class="form-section">
+                            <label for="departureLocation">Departure Location:</label>
+                            <input type="text" id="departureLocation" name="departureLocation" required>
+
+                            <label for="arrivalLocation">Arrival Location:</label>
+                            <input type="text" id="arrivalLocation" name="arrivalLocation" required>
+                        </div>
+
+                        <!-- Part 2: Departure and Arrival Dates -->
+                        <div class="form-section">
+                            <label for="departureDate">Departure Date:</label>
+                            <input type="date" id="departureDate" name="departureDate"
+                                min="<?php echo date('Y-m-d'); ?>" required>
+
+                            <label for="arrivalDate">Arrival Date:</label>
+                            <input type="date" id="arrivalDate" name="arrivalDate" min="<?php echo date('Y-m-d'); ?>"
+                                required>
+                        </div>
+
+                        <!-- Part 3: Type of Container (Weight Categories) and Price -->
+                        <div class="form-section">
+                            <label for="containerType">Type of Container:</label>
+                            <select id="containerType" name="containerType" required>
+                                <option value="20ft Standard (Up to 10 tons)">20ft Standard (Up to 10 tons)</option>
+                                <option value="40ft Standard (Up to 20 tons)">40ft Standard (Up to 20 tons)</option>
+                                <option value="40ft High Cube (Up to 25 tons)">40ft High Cube (Up to 25 tons)</option>
+                                <!-- Add more options as needed -->
+                            </select>
+
+                            <label for="price">Price:</label>
+                            <input type="number" id="price" name="price" min="0" step="0.01" required>
+                        </div>
+
+                        <button type="submit">Submit</button>
+                    </form>
+
+
                 </div>
             </div>
         </div>
