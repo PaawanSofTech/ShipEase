@@ -15,9 +15,9 @@
 				<li class="nav-item <?php if (basename($_SERVER['PHP_SELF']) == 'pricing.php')
 					echo 'active'; ?>"><a
 						href="pricing.php" class="nav-link">Pricing</a></li>
-				<li class="nav-item <?php if (basename($_SERVER['PHP_SELF']) == 'car.php')
+				<li class="nav-item <?php if (basename($_SERVER['PHP_SELF']) == 'services.php')
 					echo 'active'; ?>"><a
-						href="car.php" class="nav-link">Service</a></li>
+						href="services.php" class="nav-link">Service</a></li>
 				
 				<li class="nav-item <?php if (basename($_SERVER['PHP_SELF']) == 'contact.php')
 					echo 'active'; ?>"><a
