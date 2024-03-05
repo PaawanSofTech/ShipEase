@@ -52,7 +52,8 @@ include('includes/config.php');
 			<div class="row no-gutters slider-text justify-content-start align-items-center">
 				<div class="col-lg-6 col-md-6 ftco-animate d-flex align-items-end">
 					<div class="text">
-						<h1 class="mb-4" style=" font-weight: bold">Navigating <span> the Waves of Convenience</span></h1>
+						<h1 class="mb-4" style=" font-weight: bold">Navigating <span> the Waves of Convenience</span>
+						</h1>
 						<p style="font-size: 18px; ">
 
 							Sail smoothly through the logistics of your voyage and experience the ease of maritime
@@ -68,21 +69,22 @@ include('includes/config.php');
 					</div>
 				</div>
 				<div class="col-lg-2 col"></div>
-				<div class="col-lg-4 col-md-6 mt-0 mt-md-5 ">
-					<form action="#" class="request-form ftco-animate">
-						<h2>Shiping Details</h2>
+				<div class="col-lg-4 col-md-6 mt-0 mt-md-5">
+					<form action="process_shipping.php" method="post" class="request-form ftco-animate">
+						<h2>Shipping Details</h2>
 						<div class="form-group">
-							<label for="" class="label">Pick-up location</label>
-							<input style="color:black" type="text" class="form-control"
-								placeholder="City, Airport, Station, etc">
+							<label for="pickup_location" class="label">Pick-up location</label>
+							<input style="color: black" type="text" name="pickup_location" id="pickup_location"
+								class="form-control" placeholder="City, Airport, Station, etc" required>
 						</div>
 						<div class="form-group">
-							<label for="" class="label">Drop-off location</label>
-							<input type="text" class="form-control" placeholder="City, Airport, Station, etc">
+							<label for="dropoff_location" class="label">Drop-off location</label>
+							<input type="text" name="dropoff_location" id="dropoff_location" class="form-control"
+								placeholder="City, Airport, Station, etc" required>
 						</div>
 
 						<div class="form-group">
-							<input type="submit" value="Search Vehicle" class="btn btn-primary py-3 px-4">
+							<input type="submit" value="Search Cargo" class="btn btn-primary py-3 px-4">
 						</div>
 					</form>
 				</div>
@@ -159,7 +161,7 @@ include('includes/config.php');
 			<div class="row justify-content-center">
 				<div class="col-md-12 heading-section text-center ftco-animate mb-5">
 					<span class="subheading">What we offer</span>
-					<h2 class="mb-2">Choose Your Car</h2>
+					<h2 class="mb-2">Choose Your Cargo</h2>
 				</div>
 			</div>
 			<div class="row">
@@ -233,7 +235,7 @@ include('includes/config.php');
 						</div>
 						<div class="text p-4 text-center">
 							<h2 class="mb-0"><a href="#">Yang Ming Marine Transport Corporation</a></h2>
-						<br>
+							<br>
 							<p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book
 									now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
 						</div>
@@ -253,7 +255,7 @@ include('includes/config.php');
 						</div>
 						<div class="text p-4 text-center">
 							<h2 class="mb-0"><a href="#">Hapag-Lloyd</a></h2>
-<br>
+							<br>
 							<p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book
 									now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
 						</div>
