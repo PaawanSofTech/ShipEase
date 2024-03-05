@@ -45,7 +45,7 @@
 			<div class="row no-gutters slider-text justify-content-start align-items-center">
 				<div class="col-lg-6 col-md-6 ftco-animate d-flex align-items-end">
 					<div class="text">
-						<h1 class="mb-4">Now <span>It's easy for you</span> <span>rent a car</span></h1>
+						<h1 class="mb-4">Discover<span> Seamless Ship Port Transportation Navigating the Waves of Convenience</span> <span>rent a car</span></h1>
 						<p style="font-size: 18px;">A small river named Duden flows by their place and supplies it with
 							the necessary regelialia. It is a paradisematic country, in which roasted parts</p>
 						<a href="https://vimeo.com/45830194"
@@ -71,7 +71,7 @@
 							<label for="" class="label">Drop-off location</label>
 							<input type="text" class="form-control" placeholder="City, Airport, Station, etc">
 						</div>
-							
+
 						<div class="form-group">
 							<input type="submit" value="Search Vehicle" class="btn btn-primary py-3 px-4">
 						</div>
