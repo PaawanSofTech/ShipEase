@@ -6,52 +6,36 @@
             </div>
         </div>
         <ul id="sidebar_menu">
-            <li class="mm-active">
-                <a  href="#" aria-expanded="false">
+    <li class="<?php echo isActive('index.php'); ?>">
+        <a href="index.php" aria-expanded="false">
+            <img src="img/menu-icon/dashboard.svg" alt>
+            <span>Dashboard</span>
+        </a>
+    </li>
+    <li class="<?php echo isActive('cargo.php'); ?>">
+        <a href="cargo.php" aria-expanded="false">
+            <img src="img/menu-icon/2.svg" alt>
+            <span>Cargos</span>
+        </a>
+    </li>
+    <li class="<?php echo isActive('shippments.php'); ?>">
+        <a href="shippments.php" aria-expanded="false">
+            <img src="img/menu-icon/3.svg" alt>
+            <span>Shipments</span>
+        </a>
+    </li>
+    <li class="<?php echo isActive('request.php'); ?>">
+        <a href="request.php" aria-expanded="false">
+            <img src="img/menu-icon/8.svg" alt>
+            <span>Request</span>
+        </a>
+    </li>
+</ul>
 
-                    <img src="img/menu-icon/dashboard.svg" alt>
-                    <span>Dashboard</span>
-                </a>
-            </li>
-            <li class>
-                <a  href="#" aria-expanded="false">
-                    <img src="img/menu-icon/2.svg" alt>
-                    <span>Pages</span>
-                </a>
-                <!-- <ul>
-                    <li><a href="error_400.html">Error 404</a></li>
-                    <li><a href="error_500.html">Error 500</a></li>
-                    <li><a href="forgot_pass.html">Forgot Password</a></li>
-                </ul> -->
-            </li>
-            <li class>
-                <a  href="#" aria-expanded="false">
-                    <img src="img/menu-icon/3.svg" alt>
-                    <span>Applications</span>
-                </a>
-                <!-- <ul>
-                    <li><a href="mail_box.html">Mail Box</a></li>
-                    <li><a href="chat.html">Chat</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                </ul> -->
-            </li>
-            
-            <li class>
-                <a  href="#" aria-expanded="false">
-                    <img src="img/menu-icon/8.svg" alt>
-                    <span>Table</span>
-                </a>
-                <ul>
-                    <li><a href="data_table.html">Data Tables</a></li>
-                </ul>
-            </li>
-            <li class>
-                <a  href="Pages/ask_doubt.php" aria-expanded="false">
-                    <img src="img/menu-icon/11.svg" alt>
-                    <span>Ask Doubt</span>
-                </a>
-                
-            </li>
-            
-        </ul>
+<?php
+function isActive($page)
+{
+    return (basename($_SERVER['PHP_SELF']) === $page) ? 'mm-active' : '';
+}
+?>
     </nav>

@@ -3,6 +3,26 @@ session_start();
 error_reporting(0);
 include('includes/config.php');
 ?>
+<?php
+
+// Simulated data - Replace this with your actual data retrieval logic
+$data = [
+    ["serialNo" => 1, "cargoType" => "Container", "departureCity" => "New York", "arrivalCity" => "Los Angeles", "ship" => "Cargo Ship XYZ", "departureDate" => "2024-03-05", "arrivalDate" => "2024-03-15"],
+    // Add more data as needed
+];
+
+// Filter data based on the search term
+if (isset($_GET['term'])) {
+    $term = strtolower($_GET['term']);
+    $filteredData = array_filter($data, function ($item) use ($term) {
+        return strpos(strtolower($item['cargoType']), $term) !== false;
+    });
+
+    echo json_encode(array_values($filteredData));
+} else {
+    echo json_encode($data);
+}
+?>
 
 
 <!DOCTYPE html>
@@ -109,22 +129,71 @@ include('includes/config.php');
         }
     </style>
     <style>
-        .ask-doubt-btn-container {
-            text-align: right;
+        .container-option {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%; /* Adjust the width as needed */
         }
 
-        .ask-doubt-btn {
-            background-color: #3498db;
-            /* Choose your button color */
-            color: #fff;
-            /* Choose your text color */
-            padding: 10px 15px;
+        .search-input {
+            padding: 10px;
+            width: 75%; /* 3/4 width */
+            box-sizing: border-box;
+        }
+
+        .container-option button {
+            padding: 10px;
+            width: 23%; /* 1/4 width */
+            box-sizing: border-box;
+            background-color: #4CAF50;
+            color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 14px;
+        }
+
+        .container-option button:hover {
+            background-color: #45a049;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .action-icons {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .action-icons a {
+            text-decoration: none;
+            color: #333;
+            cursor: pointer;
+        }
+
+        @media only screen and (max-width: 600px) {
+            /* Responsive styles for small screens */
+            .search-input,
+            .container-option button {
+                width: 100%;
+            }
         }
     </style>
+
 
 
 </head>
@@ -146,7 +215,7 @@ include('includes/config.php');
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="dashboard_header_title">
-                                        <h3>Company Dashboard</h3>
+                                        <h3>Container Dashboard</h3>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
@@ -155,458 +224,69 @@ include('includes/config.php');
                                     </div>
                                 </div>
                             </div>
+                            <div class="container-option">
+    <input type="text" class="search-input" id="searchInput" placeholder="Search by Cargo Type">
+    <button onclick="addContainers()">Add Containers</button>
+</div>
+
+<table id="cargoTable">
+    <thead>
+        <tr>
+            <th>Serial No.</th>
+            <th>Cargo Type</th>
+            <th>Departure City</th>
+            <th>Arrival City</th>
+            <th>Ship</th>
+            <th>Departure Date</th>
+            <th>Arrival Date</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody id="tableBody">
+        <!-- Data will be dynamically loaded here -->
+    </tbody>
+</table>
+
+<script>
+    document.getElementById('searchInput').addEventListener('input', function () {
+        const searchTerm = this.value.toLowerCase();
+        fetch(`search.php?term=${searchTerm}`)
+            .then(response => response.json())
+            .then(data => displaySearchResults(data))
+            .catch(error => console.error('Error:', error));
+    });
+
+    function displaySearchResults(data) {
+        const tableBody = document.getElementById('tableBody');
+        tableBody.innerHTML = '';
+
+        data.forEach(item => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${item.serialNo}</td>
+                <td>${item.cargoType}</td>
+                <td>${item.departureCity}</td>
+                <td>${item.arrivalCity}</td>
+                <td>${item.ship}</td>
+                <td>${item.departureDate}</td>
+                <td>${item.arrivalDate}</td>
+                <td class="action-icons">
+                    <a href="#" title="Edit">✎</a>
+                    <a href="#" title="Delete">🗑</a>
+                </td>
+            `;
+            tableBody.appendChild(row);
+        });
+    }
+
+    function addContainers() {
+        // Implement the logic to add containers here
+        alert('Add Containers functionality to be implemented.');
+    }
+</script>
+
                         </div>
                     </div>
-                    <div class="container text-center">
-                        <!-- Card 1: No. of Questions Asked -->
-                        <div class="col-lg-3 col-md-3 col-sm-6 mb-12 d-inline-block align-top">
-                            <div class="round-card box_shadow position-relative mb_30 blue_bg">
-                                <div class="count-wrapper">
-                                    <div class="count" data-count="75">0</div>
-                                    <p class="count-description">Total Customers</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Card 2: No. of Answers Received -->
-                        <div class="col-lg-3 col-md-3 col-sm-6 mb-12 d-inline-block align-top">
-                            <div class="round-card box_shadow position-relative mb_30 orange_bg">
-                                <div class="count-wrapper">
-                                    <div class="count" data-count="120">0</div>
-                                    <p class="count-description">Total Cargo Delivered</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Card 3: No. of Video Calls Attended -->
-                        <div class="col-lg-3 col-md-3 col-sm-6 mb-12 d-inline-block align-top">
-                            <div class="round-card box_shadow position-relative mb_30 green_bg">
-                                <div class="count-wrapper">
-                                    <div class="count" data-count="30">0</div>
-                                    <p class="count-description">No. of Country</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- <div class="col-lg-8 col-xl-8">
-                        <div class="white_box mb_30">
-                            <div class="box_header">
-                                <div class="main-title">
-                                    <h3 class="mb_25">Monthly Income stats for November 2020</h3>
-                                </div>
-                                <div class="float-end d-none d-md-inline-block">
-                                    <div class="btn-group mb-2" role="group">
-                                        <button type="button" class="btn btn-sm btn-light">Today</button>
-                                        <button type="button" class="btn btn-sm btn-light">Weekly</button>
-                                        <button type="button" class="btn btn-sm btn-light">Monthly</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="line-column-chart2"></div>
-                            <div class="card_footer_white">
-                                <div class="row">
-                                    <div class="col-sm-4 text-center">
-                                        <div class="d-inline-flex">
-                                            <h5 class="me-2">$12,253</h5>
-                                            <div class="text-success">
-                                                <i class="fas fa-caret-up font-size-14 line-height-2 me-2"> </i>2.2 %
-                                            </div>
-                                        </div>
-                                        <p class="text-muted text-truncate mb-0">This month</p>
-                                    </div>
-                                    <div class="col-sm-4 text-center">
-                                        <div class="mt-4 mt-sm-0">
-                                            <p class="mb-2 text-muted text-truncate"><i
-                                                    class="fas fa-circle text-primary me-2 font-size-10 me-1"></i> This
-                                                Year :</p>
-                                            <div class="d-inline-flex align-items-center">
-                                                <h5 class="mb-0 me-2">$ 34,254</h5>
-                                                <div class="text-success">
-                                                    <i class="fas fa-caret-up font-size-14 line-height-2 me-2"> </i>2.1
-                                                    %
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4 text-center">
-                                        <div class="mt-4 mt-sm-0">
-                                            <p class="mb-2 text-muted text-truncate"><i
-                                                    class="fas fa-circle text-success font-size-10 me-1"></i> Previous
-                                                Year :</p>
-                                            <div class="d-inline-flex align-items-center">
-                                                <h5 class="mb-0">$ 32,695</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
-                    <!-- <div class="col-lg-4">
-                        <div class="list_counter_wrapper white_box mb_30 p-0 card_height_100">
-                            <div class="single_list_counter">
-                                <h3 class="deep_blue_2"><span class="counter deep_blue_2 ">50</span> + </h3>
-                                <p>Total categories</p>
-                            </div>
-                            <div class="single_list_counter">
-                                <h3 class="deep_blue_2"><span class="counter deep_blue_2">100</span> + </h3>
-                                <p>Total Listing</p>
-                            </div>
-                            <div class="single_list_counter">
-                                <h3 class="deep_blue_2"><span class="counter deep_blue_2">20</span> + </h3>
-                                <p>Claimed Listing</p>
-                            </div>
-                            <div class="single_list_counter">
-                                <h3 class="deep_blue_2"><span class="counter deep_blue_2">10</span> + </h3>
-                                <p>Reported Listing </p>
-                            </div>
-                        </div>
-                    </div> -->
-                    <!-- <div class="col-xl-6">
-                        <div class="white_box QA_section card_height_100">
-                            <div class="box_header m-0">
-                                <div class="main-title">
-                                    <h3 class="m-0">Users according to packages</h3>
-                                </div>
-                            </div>
-                            <div class="QA_table ">
-
-                                <table class="table lms_table_active2">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Package name</th>
-                                            <th scope="col">No. of users</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Free package</td>
-                                            <td>2556</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Free package</td>
-                                            <td>2556</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Free package</td>
-                                            <td>2556</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div> -->
-                    <!-- <div class="col-lg-6">
-                        <div class="white_box mb_30 card_height_100">
-                            <div class="box_header ">
-                                <div class="main-title">
-                                    <h3 class="mb_25">Overview</h3>
-                                </div>
-                            </div>
-                            <div class="activity_progressbar">
-                                <div class="single_progressbar d-flex">
-                                    <h6>Active Listings</h6>
-                                    <div id="bar1" class="barfiller">
-                                        <div class="tipWrap">
-                                            <span class="tip"></span>
-                                        </div>
-                                        <span class="fill" data-percentage="95"></span>
-                                    </div>
-                                </div>
-                                <div class="single_progressbar d-flex">
-                                    <h6>Claimed Listings</h6>
-                                    <div id="bar2" class="barfiller">
-                                        <div class="tipWrap">
-                                            <span class="tip"></span>
-                                        </div>
-                                        <span class="fill" data-percentage="75"></span>
-                                    </div>
-                                </div>
-                                <div class="single_progressbar d-flex">
-                                    <h6>Reported Listings</h6>
-                                    <div id="bar3" class="barfiller">
-                                        <div class="tipWrap">
-                                            <span class="tip"></span>
-                                        </div>
-                                        <span class="fill" data-percentage="55"></span>
-                                    </div>
-                                </div>
-                                <div class="single_progressbar d-flex">
-                                    <h6>Pending Listings</h6>
-                                    <div id="bar4" class="barfiller">
-                                        <div class="tipWrap">
-                                            <span class="tip"></span>
-                                        </div>
-                                        <span class="fill" data-percentage="25"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
-                    <!-- <div class="col-lg-8">
-                        <div class="white_box QA_section card_height_100">
-                            <div class="box_header m-0">
-                                <div class="main-title">
-                                    <h3 class="m-0">Web Visitor and trafic</h3>
-                                </div>
-                            </div>
-                            <div id="home-chart-03" style="height: 280px; position: relative;"></div>
-                        </div>
-                    </div> -->
-                    <div class="col-lg-4">
-                        <div class="white_box QA_section card_height_100 blud_card">
-                            <div class="box_header m-0">
-                                <div class="main-title">
-                                    <h3 class="m-0 text_white" style="font-size:1.5rem;">Subscription Details</h3>
-                                </div>
-                            </div>
-                            <div class="content_user">
-                                <p style="font-size:1.5rem;">Remaining Days: 15</p>
-                                <p style="font-size:1.5rem;">End Date: 20-04-2024</p>
-                                <a href="#" class="btn_2" style="font-size:1rem;">Renew Subscription</a>
-                                <img src="img/users_img.png" alt>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="white_box card_height_100">
-                            <div class="box_header">
-                                <div class="main-title" style="display: inline-flex;">
-                                    <h3 class="m-0">Recent Doubts</h3>
-                                </div>
-                                <div class="ask-doubt-btn-container" style="display: inline-flex;">
-                                    <button class="ask-doubt-btn">Ask Doubt</button>
-                                </div>
-                            </div>
-                            <div class="Activity_timeline">
-                                <ul>
-                                    <li>
-                                        <div class="activity_bell"></div>
-                                        <div class="timeLine_inner d-flex align-items-center">
-                                            <div class="activity_wrap">
-                                                <h6>5 min ago</h6>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-                                                    scelerisque
-                                                </p>
-                                            </div>
-                                            <div class="notification_read_btn mb_10">
-                                                <a href="#" class="notification_btn">Read</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="activity_bell"></div>
-                                        <div class="timeLine_inner d-flex align-items-center">
-                                            <div class="activity_wrap">
-                                                <h6>5 min ago</h6>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-                                                    scelerisque
-                                                </p>
-                                            </div>
-                                            <div class="notification_read_btn mb_10">
-                                                <a href="#" class="notification_btn">Read</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="activity_bell"></div>
-                                        <div class="timeLine_inner d-flex align-items-center">
-                                            <div class="activity_wrap">
-                                                <h6>5 min ago</h6>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-                                                    scelerisque
-                                                </p>
-                                            </div>
-                                            <div class="notification_read_btn mb_10">
-                                                <a href="#" class="notification_btn">Read</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="activity_bell"></div>
-                                        <div class="timeLine_inner d-flex align-items-center">
-                                            <div class="activity_wrap">
-                                                <h6>5 min ago</h6>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-                                                    scelerisque
-                                                </p>
-                                            </div>
-                                            <div class="notification_read_btn mb_10">
-                                                <a href="#" class="notification_btn">Read</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- <div class="col-lg-4">
-                        <div class="white_box QA_section card_height_100">
-                            <div class="box_header m-0">
-                                <div class="main-title">
-                                    <h3 class="m-0">Listings according to Category</h3>
-                                </div>
-                            </div>
-                            <div class="QA_table ">
-
-                                <table class="table lms_table_active2">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Package name</th>
-                                            <th scope="col">No. of users</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Restaurant</td>
-                                            <td>2556</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Hotel</td>
-                                            <td>25506</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Apartment</td>
-                                            <td>25536</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Salon</td>
-                                            <td>25536</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Automobile</td>
-                                            <td>25536</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Spa</td>
-                                            <td>25536</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="white_box QA_section card_height_100">
-                            <div class="box_header m-0">
-                                <div class="main-title">
-                                    <h3 class="m-0">Claimed Listings</h3>
-                                </div>
-                            </div>
-                            <div class="QA_table ">
-
-                                <table class="table lms_table_active2">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Package name</th>
-                                            <th scope="col">No. of users</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Restaurant</td>
-                                            <td>2556</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Hotel</td>
-                                            <td>25506</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Apartment</td>
-                                            <td>25536</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Salon</td>
-                                            <td>25536</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Automobile</td>
-                                            <td>25536</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Spa</td>
-                                            <td>25536</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="white_box QA_section card_height_100">
-                            <div class="box_header m-0">
-                                <div class="main-title">
-                                    <h3 class="m-0">Reported Listings</h3>
-                                </div>
-                            </div>
-                            <div class="QA_table ">
-
-                                <table class="table lms_table_active2">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Package name</th>
-                                            <th scope="col">No. of users</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Restaurant</td>
-                                            <td>2556</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Hotel</td>
-                                            <td>25506</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Apartment</td>
-                                            <td>25536</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Salon</td>
-                                            <td>25536</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Automobile</td>
-                                            <td>25536</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Spa</td>
-                                            <td>25536</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div> -->
-                    <!-- <div class="col-lg-3">
-                        <div class="white_box QA_section card_height_100">
-                            <div class="box_header m-0">
-                                <div class="main-title">
-                                    <h3 class="m-0">Device</h3>
-                                </div>
-                            </div>
-                            <div id="bar-chart-6" class></div>
-                        </div>
-                    </div> -->
-                    <!-- <div class="col-lg-3">
-                        <div class="white_box">
-                            <div class="box_header">
-                                <div class="main-title">
-                                    <h3 class="m-0">Browser</h3>
-                                </div>
-                            </div>
-                            <div class="casnvas_box">
-                                <canvas height="210" width="210" id="canvasDoughnut"></canvas>
-                            </div>
-                            <div class="legend_style legend_style_grid mt_10px">
-                                <li class="d-block"> <span style="background-color: #525CE5;"></span>Chrome</li>
-                                <li class="d-block"> <span style="background-color: #9C52FD;"></span> Mojila</li>
-                                <li class="d-block"> <span style="background-color: #3B76EF"></span> Safari</li>
-                                <li class="d-block"> <span style="background-color:#00BFBF;"></span> Opera</li>
-                                <li class="d-block"> <span style="background-color:#FFA70B;"></span> Microsoft Edg</li>
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
             </div>
         </div>
