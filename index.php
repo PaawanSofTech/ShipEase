@@ -110,7 +110,7 @@ include('includes/config.php');
 							</div>
 							<p>Experience reliable cargo transportation around the clock.
 							</p>
-							</div>
+						</div>
 					</div>
 				</div>
 				<div class="col-md-3 d-flex align-self-stretch ftco-animate">
@@ -121,8 +121,8 @@ include('includes/config.php');
 								<h3 class="heading mb-0 pl-3">Diverses location</h3>
 							</div>
 							<p>Connect effortlessly to various destinations with our comprehensive service.
-								</p>
-							</div>
+							</p>
+						</div>
 					</div>
 				</div>
 				<div class="col-md-3 d-flex align-self-stretch ftco-animate">
@@ -134,7 +134,7 @@ include('includes/config.php');
 							</div>
 							<p>Book with ease, ensuring a smooth journey every time.
 							</p>
-							</div>
+						</div>
 					</div>
 				</div>
 				<div class="col-md-3 d-flex align-self-stretch ftco-animate">
@@ -144,16 +144,17 @@ include('includes/config.php');
 								<div class="icon"><span class="flaticon-rent"></span></div>
 								<h3 class="heading mb-0 pl-3">Rental Cars</h3>
 							</div>
-							<p>Embark on your journey with our rental cars, providing vitality and mobility for your travels.
+							<p>Embark on your journey with our rental cars, providing vitality and mobility for your
+								travels.
 							</p>
-							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-
-	<section class="ftco-section">
+	<br>
+	<!-- <section class="ftco-section">
 		<div class="container-fluid px-4">
 			<div class="row justify-content-center">
 				<div class="col-md-12 heading-section text-center ftco-animate mb-5">
@@ -317,7 +318,7 @@ include('includes/config.php');
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 
 	<section class="ftco-section services-section img" style="background-image: url(images/bg_2.jpg);">
 		<div class="overlay"></div>
@@ -335,7 +336,8 @@ include('includes/config.php');
 							<div class="icon d-flex align-items-center justify-content-center"><span
 									class="flaticon-route"></span></div>
 							<h3>Pick Destination</h3>
-							<p>A small river named Duden flows by their place and supplies it with you</p>
+							<p>Choose your destination effortlessly, just as the Duden river flows through its course.
+							</p>
 						</div>
 					</div>
 				</div>
@@ -345,7 +347,9 @@ include('includes/config.php');
 							<div class="icon d-flex align-items-center justify-content-center"><span
 									class="flaticon-select"></span></div>
 							<h3>Select Term</h3>
-							<p>A small river named Duden flows by their place and supplies it with you</p>
+							<p>Choose the duration that suits your needs effortlessly.
+							</p>
+							</p>
 						</div>
 					</div>
 				</div>
@@ -354,8 +358,9 @@ include('includes/config.php');
 						<div class="media-body py-md-4 text-center">
 							<div class="icon d-flex align-items-center justify-content-center"><span
 									class="flaticon-rent"></span></div>
-							<h3>Choose A Car</h3>
-							<p>A small river named Duden flows by their place and supplies it with you</p>
+							<h3>Choose A Cargo</h3>
+							<p>Select from our diverse fleet of vehicles for a tailored experience.
+							</p>
 						</div>
 					</div>
 				</div>
@@ -364,8 +369,9 @@ include('includes/config.php');
 						<div class="media-body py-md-4 text-center">
 							<div class="icon d-flex align-items-center justify-content-center"><span
 									class="flaticon-review"></span></div>
-							<h3>Enjoy The Ride</h3>
-							<p>A small river named Duden flows by their place and supplies it with you</p>
+							<h3>Enjoy The Ease</h3>
+							<p>Sit back, relax, with our seamless transportation services.
+							</p>
 						</div>
 					</div>
 				</div>
@@ -373,82 +379,7 @@ include('includes/config.php');
 		</div>
 	</section>
 
-	<section class="ftco-section testimony-section">
-		<div class="container">
-			<div class="row justify-content-center mb-5">
-				<div class="col-md-7 text-center heading-section ftco-animate">
-					<span class="subheading">Testimonial</span>
-					<h2 class="mb-3">Happy Clients</h2>
-				</div>
-			</div>
-			<div class="row ftco-animate">
-				<div class="col-md-12">
-					<div class="carousel-testimony owl-carousel ftco-owl">
-						<div class="item">
-							<div class="testimony-wrap text-center py-4 pb-5">
-								<div class="user-img mb-4" style="background-image: url(images/person_1.jpg)">
-								</div>
-								<div class="text pt-4">
-									<p class="mb-4">Far far away, behind the word mountains, far from the countries
-										Vokalia and Consonantia, there live the blind texts.</p>
-									<p class="name">Roger Scott</p>
-									<span class="position">Marketing Manager</span>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="testimony-wrap text-center py-4 pb-5">
-								<div class="user-img mb-4" style="background-image: url(images/person_2.jpg)">
-								</div>
-								<div class="text pt-4">
-									<p class="mb-4">Far far away, behind the word mountains, far from the countries
-										Vokalia and Consonantia, there live the blind texts.</p>
-									<p class="name">Roger Scott</p>
-									<span class="position">Interface Designer</span>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="testimony-wrap text-center py-4 pb-5">
-								<div class="user-img mb-4" style="background-image: url(images/person_3.jpg)">
-								</div>
-								<div class="text pt-4">
-									<p class="mb-4">Far far away, behind the word mountains, far from the countries
-										Vokalia and Consonantia, there live the blind texts.</p>
-									<p class="name">Roger Scott</p>
-									<span class="position">UI Designer</span>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="testimony-wrap text-center py-4 pb-5">
-								<div class="user-img mb-4" style="background-image: url(images/person_1.jpg)">
-								</div>
-								<div class="text pt-4">
-									<p class="mb-4">Far far away, behind the word mountains, far from the countries
-										Vokalia and Consonantia, there live the blind texts.</p>
-									<p class="name">Roger Scott</p>
-									<span class="position">Web Developer</span>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="testimony-wrap text-center py-4 pb-5">
-								<div class="user-img mb-4" style="background-image: url(images/person_1.jpg)">
-								</div>
-								<div class="text pt-4">
-									<p class="mb-4">Far far away, behind the word mountains, far from the countries
-										Vokalia and Consonantia, there live the blind texts.</p>
-									<p class="name">Roger Scott</p>
-									<span class="position">System Analyst</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+	<br>
 
 	<section class="ftco-section ftco-no-pt ftco-no-pb">
 		<div class="container">
@@ -459,17 +390,16 @@ include('includes/config.php');
 				<div class="col-md-6 wrap-about py-md-5 ftco-animate">
 					<div class="heading-section mb-5 pl-md-5">
 						<span class="subheading">About us</span>
-						<h2 class="mb-4">Choose A Perfect Car</h2>
+						<h2 class="mb-4">Choose A Perfect Cargo</h2>
 
-						<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.
-							It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-						<p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it
-							would have been rewritten a thousand times and everything that was left from its origin
-							would be the word "and" and the Little Blind Text should turn around and return to its own,
-							safe country. But nothing the copy said could convince her and so it didn’t take long until
-							a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged
-							her into their agency, where they abused her for their.</p>
-						<p><a href="#" class="btn btn-primary">Search Vehicle</a></p>
+						<p>In the realm of seamless cargo transport, envision your perfect journey with us. Just as a
+							small river named Duden supplies essential regelialia to its surroundings, we provide vital
+							and reliable shipping solutions. Our commitment is akin to a paradisematic country, ensuring
+							that your cargo experience is unparalleled. Navigating the waves of logistics, we strive to
+							deliver excellence. On this voyage, you won't encounter the roasted parts of sentences, but
+							a smooth and reliable service that stands the test of time. Choose us for your cargo needs,
+							and let your shipments sail with confidence.</p>
+						<p><a href="#" class="btn btn-primary">Search Cargo</a></p>
 					</div>
 				</div>
 			</div>
