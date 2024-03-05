@@ -70,16 +70,16 @@ include('includes/config.php');
 				</div>
 				<div class="col-lg-2 col"></div>
 				<div class="col-lg-4 col-md-6 mt-0 mt-md-5">
-					<form action="process_shipping.php" method="post" class="request-form ftco-animate">
+					<form action="shipping.php" method="post" class="request-form ftco-animate">
 						<h2>Shipping Details</h2>
 						<div class="form-group">
 							<label for="pickup_location" class="label">Pick-up location</label>
-							<input style="color: black" type="text" name="pickup_location" id="pickup_location"
+							<input style="color: black" type="text" name="departure" id="pickup_location"
 								class="form-control" placeholder="City, Airport, Station, etc" required>
 						</div>
 						<div class="form-group">
 							<label for="dropoff_location" class="label">Drop-off location</label>
-							<input type="text" name="dropoff_location" id="dropoff_location" class="form-control"
+							<input type="text" name="arrival" id="dropoff_location" class="form-control"
 								placeholder="City, Airport, Station, etc" required>
 						</div>
 
