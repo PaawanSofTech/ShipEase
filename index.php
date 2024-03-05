@@ -46,14 +46,14 @@ include('includes/config.php');
 	<?php include('includes/navbar.php'); ?>
 	<!-- END nav -->
 
-	<div class="hero-wrap" style="background-image: url('images/banner_1.jpg');" data-stellar-background-ratio="0.5">
+	<div class="hero-wrap" style="background-image: url('images/banner_5.jpg');" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row no-gutters slider-text justify-content-start align-items-center">
 				<div class="col-lg-6 col-md-6 ftco-animate d-flex align-items-end">
 					<div class="text">
-						<h1 class="mb-4">Navigating <span> the Waves of Convenience</span></h1>
-						<p style="font-size: 18px;">
+						<h1 class="mb-4" style=" font-weight: bold">Navigating <span> the Waves of Convenience</span></h1>
+						<p style="font-size: 18px; ">
 
 							Sail smoothly through the logistics of your voyage and experience the ease of maritime
 							transport with us.</p>
@@ -154,7 +154,7 @@ include('includes/config.php');
 		</div>
 	</section>
 	<br>
-	<!-- <section class="ftco-section">
+	<section class="ftco-section">
 		<div class="container-fluid px-4">
 			<div class="row justify-content-center">
 				<div class="col-md-12 heading-section text-center ftco-animate mb-5">
@@ -318,7 +318,7 @@ include('includes/config.php');
 				</div>
 			</div>
 		</div>
-	</section> -->
+	</section>
 
 	<section class="ftco-section services-section img" style="background-image: url(images/banner_2.jpg);">
 		<div class="overlay"></div>
