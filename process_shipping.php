@@ -12,7 +12,6 @@ $connection = new mysqli($servername, $username, $password, $dbname);
 if ($connection->connect_error) {
     die("Connection failed: " . $connection->connect_error);
 }
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve form data
     $pickup_location = $_POST["pickup_location"];
