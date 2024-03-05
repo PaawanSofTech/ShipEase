@@ -8,7 +8,7 @@ include('includes/config.php');
 <html lang="en">
 
 <head>
-	<title>Autoroad - Free Bootstrap 4 Template by Colorlib</title>
+	<title>ShipEase - Navigating the Waves of Convenience</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -46,7 +46,7 @@ include('includes/config.php');
 	<?php include('includes/navbar.php'); ?>
 	<!-- END nav -->
 
-	<div class="hero-wrap" style="background-image: url('images/bg_1.jpg');" data-stellar-background-ratio="0.5">
+	<div class="hero-wrap" style="background-image: url('images/banner_1.jpg');" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row no-gutters slider-text justify-content-start align-items-center">
@@ -320,7 +320,7 @@ include('includes/config.php');
 		</div>
 	</section> -->
 
-	<section class="ftco-section services-section img" style="background-image: url(images/bg_2.jpg);">
+	<section class="ftco-section services-section img" style="background-image: url(images/banner_2.jpg);">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row justify-content-center mb-5">
@@ -385,7 +385,7 @@ include('includes/config.php');
 		<div class="container">
 			<div class="row no-gutters">
 				<div class="col-md-6 p-md-5 img img-2 d-flex justify-content-center align-items-center"
-					style="background-image: url(images/about.jpg);">
+					style="background-image: url(images/ship.jpg);">
 				</div>
 				<div class="col-md-6 wrap-about py-md-5 ftco-animate">
 					<div class="heading-section mb-5 pl-md-5">
@@ -399,77 +399,14 @@ include('includes/config.php');
 							deliver excellence. On this voyage, you won't encounter the roasted parts of sentences, but
 							a smooth and reliable service that stands the test of time. Choose us for your cargo needs,
 							and let your shipments sail with confidence.</p>
-						<p><a href="#" class="btn btn-primary">Search Cargo</a></p>
+						<p><a href="#" class="btn btn-primary">Search Services</a></p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<section class="ftco-section">
-		<div class="container">
-			<div class="row justify-content-center mb-5">
-				<div class="col-md-7 heading-section text-center ftco-animate">
-					<span class="subheading">Blog</span>
-					<h2>Recent Blog</h2>
-				</div>
-			</div>
-			<div class="row d-flex">
-				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry justify-content-end">
-						<a href="blog-single.html" class="block-20"
-							style="background-image: url('images/image_1.jpg');">
-						</a>
-						<div class="text pt-4">
-							<div class="meta mb-3">
-								<div><a href="#">July. 24, 2019</a></div>
-								<div><a href="#">Admin</a></div>
-								<div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-							</div>
-							<h3 class="heading mt-2"><a href="#">Why Lead Generation is Key for Business Growth</a></h3>
-							<p>A small river named Duden flows by their place and supplies it with the necessary
-								regelialia.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry justify-content-end">
-						<a href="blog-single.html" class="block-20"
-							style="background-image: url('images/image_2.jpg');">
-						</a>
-						<div class="text pt-4">
-							<div class="meta mb-3">
-								<div><a href="#">July. 24, 2019</a></div>
-								<div><a href="#">Admin</a></div>
-								<div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-							</div>
-							<h3 class="heading mt-2"><a href="#">Why Lead Generation is Key for Business Growth</a></h3>
-							<p>A small river named Duden flows by their place and supplies it with the necessary
-								regelialia.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry">
-						<a href="blog-single.html" class="block-20"
-							style="background-image: url('images/image_3.jpg');">
-						</a>
-						<div class="text pt-4">
-							<div class="meta mb-3">
-								<div><a href="#">July. 24, 2019</a></div>
-								<div><a href="#">Admin</a></div>
-								<div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-							</div>
-							<h3 class="heading mt-2"><a href="#">Why Lead Generation is Key for Business Growth</a></h3>
-							<p>A small river named Duden flows by their place and supplies it with the necessary
-								regelialia.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
+	<br>
 	<?php include('includes/footer.php'); ?>
 
 	<!-- loader -->
