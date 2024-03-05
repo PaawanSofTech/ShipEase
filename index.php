@@ -1,3 +1,9 @@
+<?php
+session_start();
+error_reporting(0);
+include('includes/config.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,15 +34,16 @@
 	<link rel="stylesheet" href="css/icomoon.css">
 	<link rel="stylesheet" href="css/style.css">
 
-	<style>input.form-control[type="text"] {
-        color: black !important;
-    }
+	<style>
+		input.form-control[type="text"] {
+			color: black !important;
+		}
 	</style>
 </head>
 
 <body>
 
-<?php include('includes/navbar.php'); ?>
+	<?php include('includes/navbar.php'); ?>
 	<!-- END nav -->
 
 	<div class="hero-wrap" style="background-image: url('images/bg_1.jpg');" data-stellar-background-ratio="0.5">
@@ -47,10 +54,10 @@
 					<div class="text">
 						<h1 class="mb-4">Navigating <span> the Waves of Convenience</span></h1>
 						<p style="font-size: 18px;">
-						
-						Sail smoothly through the logistics of your voyage and experience the ease of maritime transport with us.</p>
-						<a href="	"
-							class="icon-wrap popup-vimeo d-flex align-items-center mt-4">
+
+							Sail smoothly through the logistics of your voyage and experience the ease of maritime
+							transport with us.</p>
+						<a href="	" class="icon-wrap popup-vimeo d-flex align-items-center mt-4">
 							<div class="icon d-flex align-items-center justify-content-center">
 								<span class="ion-ios-play"></span>
 							</div>
@@ -61,12 +68,13 @@
 					</div>
 				</div>
 				<div class="col-lg-2 col"></div>
-				<div class="col-lg-4 col-md-6 mt-0 mt-md-5 " >
+				<div class="col-lg-4 col-md-6 mt-0 mt-md-5 ">
 					<form action="#" class="request-form ftco-animate">
 						<h2>Shiping Details</h2>
 						<div class="form-group">
 							<label for="" class="label">Pick-up location</label>
-							<input style="color:black" type="text" class="form-control" placeholder="City, Airport, Station, etc">
+							<input style="color:black" type="text" class="form-control"
+								placeholder="City, Airport, Station, etc">
 						</div>
 						<div class="form-group">
 							<label for="" class="label">Drop-off location</label>
