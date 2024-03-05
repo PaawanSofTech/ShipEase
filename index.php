@@ -47,7 +47,7 @@
 					<div class="text">
 						<h1 class="mb-4">Discover<span> Seamless Ship Port Transportation Navigating the Waves of Convenience</span> <span>rent a car</span></h1>
 						<p style="font-size: 18px;">A small river named Duden flows by their place and supplies it with
-							the necessary regelialia. It is a paradisematic country, in which roasted parts</p>
+							the necessary regelialia. It is a paradisematic country, in which roasted part</p>
 						<a href="https://vimeo.com/45830194"
 							class="icon-wrap popup-vimeo d-flex align-items-center mt-4">
 							<div class="icon d-flex align-items-center justify-content-center">
