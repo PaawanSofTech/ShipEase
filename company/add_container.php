@@ -121,7 +121,8 @@ include('includes/config.php');
         }
 
         form {
-            width: 80%; /* Adjust the width as needed */
+            width: 80%;
+            /* Adjust the width as needed */
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
@@ -132,7 +133,8 @@ include('includes/config.php');
         }
 
         .form-section {
-            width: calc(33.33% - 20px); /* 33.33% width with some spacing */
+            width: calc(33.33% - 20px);
+            /* 33.33% width with some spacing */
             margin-bottom: 20px;
         }
 
@@ -143,7 +145,8 @@ include('includes/config.php');
             color: #333;
         }
 
-        .form-section input, .form-section select {
+        .form-section input,
+        .form-section select {
             width: 100%;
             padding: 10px;
             box-sizing: border-box;
@@ -205,44 +208,93 @@ include('includes/config.php');
                             </div>
                         </div>
                     </div>
-                    
-                    <form action="process_form.php" method="post">
-    <!-- Part 1: Departure and Arrival Locations -->
-    <div class="form-section">
-        <label for="departureLocation">Departure Location:</label>
-        <input type="text" id="departureLocation" name="departureLocation" required>
 
-        <label for="arrivalLocation">Arrival Location:</label>
-        <input type="text" id="arrivalLocation" name="arrivalLocation" required>
-    </div>
+                    <?php
+                    // Define variables to store form data
+                    $departureLocation = $arrivalLocation = $departureDate = $arrivalDate = $containerType = $price = $companyID = "";
 
-    <!-- Part 2: Departure and Arrival Dates -->
-    <div class="form-section">
-        <label for="departureDate">Departure Date:</label>
-        <input type="date" id="departureDate" name="departureDate" min="<?php echo date('Y-m-d'); ?>" required>
+                    // Check if the form is submitted
+                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                        // Retrieve form data
+                        $departureLocation = sanitize_input($_POST["departureLocation"]);
+                        $arrivalLocation = sanitize_input($_POST["arrivalLocation"]);
+                        $departureDate = sanitize_input($_POST["departureDate"]);
+                        $arrivalDate = sanitize_input($_POST["arrivalDate"]);
+                        $containerType = sanitize_input($_POST["containerType"]);
+                        $price = sanitize_input($_POST["price"]);
 
-        <label for="arrivalDate">Arrival Date:</label>
-        <input type="date" id="arrivalDate" name="arrivalDate" min="<?php echo date('Y-m-d'); ?>" required>
-    </div>
+                        // Generate a random 6-digit company ID
+                        $companyID = generate_company_id();
 
-    <!-- Part 3: Type of Container (Weight Categories) and Price -->
-    <div class="form-section">
-        <label for="containerType">Type of Container:</label>
-        <select id="containerType" name="containerType" required>
-            <option value="20ft Standard (Up to 10 tons)">20ft Standard (Up to 10 tons)</option>
-            <option value="40ft Standard (Up to 20 tons)">40ft Standard (Up to 20 tons)</option>
-            <option value="40ft High Cube (Up to 25 tons)">40ft High Cube (Up to 25 tons)</option>
-            <!-- Add more options as needed -->
-        </select>
+                        // Add your logic to store the form data in the database or perform other actions
+                        // For demonstration, let's print the data
+                        echo "<h2>Form Data:</h2>";
+                        echo "<p>Departure Location: $departureLocation</p>";
+                        echo "<p>Arrival Location: $arrivalLocation</p>";
+                        echo "<p>Departure Date: $departureDate</p>";
+                        echo "<p>Arrival Date: $arrivalDate</p>";
+                        echo "<p>Container Type: $containerType</p>";
+                        echo "<p>Price: $price</p>";
+                        echo "<p>Company ID: $companyID</p>";
+                    }
 
-        <label for="price">Price:</label>
-        <input type="number" id="price" name="price" min="0" step="0.01" required>
-    </div>
+                    // Function to sanitize form inputs
+                    function sanitize_input($data)
+                    {
+                        $data = trim($data);
+                        $data = stripslashes($data);
+                        $data = htmlspecialchars($data);
+                        return $data;
+                    }
 
-    <button type="submit">Submit</button>
-</form>
+                    // Function to generate a random 6-digit company ID
+                    function generate_company_id()
+                    {
+                        return str_pad(mt_rand(1, 999999), 6, '0', STR_PAD_LEFT);
+                    }
+                    ?>
 
-                    
+                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                        <!-- Your form HTML here -->
+
+                        <!-- Part 1: Departure and Arrival Locations -->
+                        <div class="form-section">
+                            <label for="departureLocation">Departure Location:</label>
+                            <input type="text" id="departureLocation" name="departureLocation" required>
+
+                            <label for="arrivalLocation">Arrival Location:</label>
+                            <input type="text" id="arrivalLocation" name="arrivalLocation" required>
+                        </div>
+
+                        <!-- Part 2: Departure and Arrival Dates -->
+                        <div class="form-section">
+                            <label for="departureDate">Departure Date:</label>
+                            <input type="date" id="departureDate" name="departureDate"
+                                min="<?php echo date('Y-m-d'); ?>" required>
+
+                            <label for="arrivalDate">Arrival Date:</label>
+                            <input type="date" id="arrivalDate" name="arrivalDate" min="<?php echo date('Y-m-d'); ?>"
+                                required>
+                        </div>
+
+                        <!-- Part 3: Type of Container (Weight Categories) and Price -->
+                        <div class="form-section">
+                            <label for="containerType">Type of Container:</label>
+                            <select id="containerType" name="containerType" required>
+                                <option value="20ft Standard (Up to 10 tons)">20ft Standard (Up to 10 tons)</option>
+                                <option value="40ft Standard (Up to 20 tons)">40ft Standard (Up to 20 tons)</option>
+                                <option value="40ft High Cube (Up to 25 tons)">40ft High Cube (Up to 25 tons)</option>
+                                <!-- Add more options as needed -->
+                            </select>
+
+                            <label for="price">Price:</label>
+                            <input type="number" id="price" name="price" min="0" step="0.01" required>
+                        </div>
+
+                        <button type="submit">Submit</button>
+                    </form>
+
+
                 </div>
             </div>
         </div>
