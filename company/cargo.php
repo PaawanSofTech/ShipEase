@@ -12,7 +12,7 @@ include('includes/config.php');
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Student Dashboard</title>
+    <title>Company Dashboard</title>
     <link rel="icon" href="img/logo.png" type="image/png">
 
     <link rel="stylesheet" href="css/bootstrap1.min.css">
@@ -146,12 +146,12 @@ include('includes/config.php');
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="dashboard_header_title">
-                                        <h3>Student Dashboard</h3>
+                                        <h3>Company Dashboard</h3>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="dashboard_breadcam text-end">
-                                        <p><a href>Dashboard</a> <i class="fas fa-caret-right"></i>Performance Book</p>
+                                        <p><a href>Dashboard</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -163,7 +163,7 @@ include('includes/config.php');
                             <div class="round-card box_shadow position-relative mb_30 blue_bg">
                                 <div class="count-wrapper">
                                     <div class="count" data-count="75">0</div>
-                                    <p class="count-description">Questions Asked</p>
+                                    <p class="count-description">Total Customers</p>
                                 </div>
                             </div>
                         </div>
@@ -173,7 +173,7 @@ include('includes/config.php');
                             <div class="round-card box_shadow position-relative mb_30 orange_bg">
                                 <div class="count-wrapper">
                                     <div class="count" data-count="120">0</div>
-                                    <p class="count-description">Answers Received</p>
+                                    <p class="count-description">Total Cargo Delivered</p>
                                 </div>
                             </div>
                         </div>
@@ -183,7 +183,7 @@ include('includes/config.php');
                             <div class="round-card box_shadow position-relative mb_30 green_bg">
                                 <div class="count-wrapper">
                                     <div class="count" data-count="30">0</div>
-                                    <p class="count-description">Video Calls Attended</p>
+                                    <p class="count-description">No. of Country</p>
                                 </div>
                             </div>
                         </div>
