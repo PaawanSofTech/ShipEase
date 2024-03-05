@@ -26,7 +26,7 @@
 			<?php
 			session_start();
 			if (isset($_SESSION['username'])) {
-				echo '<p style=" margin-bottom: -3px;">Hello, ' . $_SESSION['username'] . '</p>';
+				echo '<p style=" margin-bottom: -3px; color: white;">Hello, ' . $_SESSION['username'] . '</p>';
 				echo '<a style="margin-left: 50px;" href="logout.php">Logout</a>';
 			} else {
 

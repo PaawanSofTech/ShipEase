@@ -121,7 +121,7 @@ function bookCargo() {
 function closeSuccessCard() {
     // Hide the success card and redirect to index.php
     document.getElementById('success-card').style.display = 'none';
-    window.location.href = 'index.php';
+    window.location.href = 'logout.php';
 }
 </script>
 
