@@ -40,7 +40,7 @@ include('includes/config.php');
 	<?php include 'includes/navbar.php'; ?>
 	<!-- END nav -->
 
-	<section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/banner_5.jpg');"
+	<section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/banner_7.jpg'); background-size:contain:"
 		data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
@@ -70,8 +70,8 @@ include('includes/config.php');
 							</div>
 						</div>
 						<div class="text p-4 text-center">
-							<h2 class="mb-0"><a href="car-single.html">Mercedes Grand Sedan</a></h2>
-							<span>Audi</span>
+							<h2 class="mb-0"><a href="car-single.html">APL (American President Lines)</a></h2>
+							<br>
 							<p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book
 									now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
 						</div>
@@ -89,8 +89,8 @@ include('includes/config.php');
 							</div>
 						</div>
 						<div class="text p-4 text-center">
-							<h2 class="mb-0"><a href="car-single.html">Mercedes Grand Sedan</a></h2>
-							<span>Ford</span>
+							<h2 class="mb-0"><a href="car-single.html">ONE (Ocean Network Express)</a></h2>
+							<br>
 							<p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book
 									now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
 						</div>
@@ -108,8 +108,8 @@ include('includes/config.php');
 							</div>
 						</div>
 						<div class="text p-4 text-center">
-							<h2 class="mb-0"><a href="car-single.html">Mercedes Grand Sedan</a></h2>
-							<span>Cheverolet</span>
+							<h2 class="mb-0"><a href="car-single.html">ZIM Integrated Shipping Services</a></h2>
+							<br>
 							<p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book
 									now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
 						</div>
@@ -127,8 +127,8 @@ include('includes/config.php');
 							</div>
 						</div>
 						<div class="text p-4 text-center">
-							<h2 class="mb-0"><a href="car-single.html">Mercedes Grand Sedan</a></h2>
-							<span>Mercedes</span>
+							<h2 class="mb-0"><a href="car-single.html">Yang Ming Marine Transport Corporation</a></h2>
+							<br>
 							<p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book
 									now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
 						</div>
@@ -147,8 +147,8 @@ include('includes/config.php');
 							</div>
 						</div>
 						<div class="text p-4 text-center">
-							<h2 class="mb-0"><a href="car-single.html">Mercedes Grand Sedan</a></h2>
-							<span>Audi</span>
+							<h2 class="mb-0"><a href="car-single.html">Yang Ming Marine Transport Corporation</a></h2>
+							<br>
 							<p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book
 									now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
 						</div>
@@ -166,8 +166,8 @@ include('includes/config.php');
 							</div>
 						</div>
 						<div class="text p-4 text-center">
-							<h2 class="mb-0"><a href="car-single.html">Mercedes Grand Sedan</a></h2>
-							<span>Ford</span>
+							<h2 class="mb-0"><a href="car-single.html">Hapag-Lloyd</a></h2>
+							<br>
 							<p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book
 									now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
 						</div>
@@ -185,8 +185,8 @@ include('includes/config.php');
 							</div>
 						</div>
 						<div class="text p-4 text-center">
-							<h2 class="mb-0"><a href="car-single.html">Mercedes Grand Sedan</a></h2>
-							<span>Cheverolet</span>
+							<h2 class="mb-0"><a href="car-single.html">CMA CGM</a></h2>
+							<br>
 							<p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book
 									now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
 						</div>
@@ -204,8 +204,8 @@ include('includes/config.php');
 							</div>
 						</div>
 						<div class="text p-4 text-center">
-							<h2 class="mb-0"><a href="car-single.html">Mercedes Grand Sedan</a></h2>
-							<span>Mercedes</span>
+							<h2 class="mb-0"><a href="car-single.html">Evergreen Marine Services Corporation</a></h2>
+							<br>
 							<p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book
 									now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
 						</div>
@@ -224,8 +224,8 @@ include('includes/config.php');
 							</div>
 						</div>
 						<div class="text p-4 text-center">
-							<h2 class="mb-0"><a href="car-single.html">Mercedes Grand Sedan</a></h2>
-							<span>Audi</span>
+							<h2 class="mb-0"><a href="car-single.html">UASC (United Arab Shipping Company)</a></h2>
+							<br>
 							<p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book
 									now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
 						</div>
@@ -243,7 +243,7 @@ include('includes/config.php');
 							</div>
 						</div>
 						<div class="text p-4 text-center">
-							<h2 class="mb-0"><a href="car-single.html">Mercedes Grand Sedan</a></h2>
+							<h2 class="mb-0"><a href="car-single.html">APL (American President Lines)</a></h2>
 							<span>Ford</span>
 							<p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book
 									now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
@@ -262,8 +262,8 @@ include('includes/config.php');
 							</div>
 						</div>
 						<div class="text p-4 text-center">
-							<h2 class="mb-0"><a href="car-single.html">Mercedes Grand Sedan</a></h2>
-							<span>Cheverolet</span>
+							<h2 class="mb-0"><a href="car-single.html">ONE (Ocean Network Express)</a></h2>
+							<br>
 							<p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book
 									now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
 						</div>
@@ -281,7 +281,7 @@ include('includes/config.php');
 							</div>
 						</div>
 						<div class="text p-4 text-center">
-							<h2 class="mb-0"><a href="car-single.html">Mercedes Grand Sedan</a></h2>
+							<h2 class="mb-0"><a href="car-single.html">ZIM Integrated Shipping Services</a></h2>
 							<span>Mercedes</span>
 							<p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book
 									now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>

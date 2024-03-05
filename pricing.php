@@ -63,9 +63,9 @@ include('includes/config.php');
 								<tr class="text-center">
 									<th>&nbsp;</th>
 									<th>&nbsp;</th>
-									<th class="bg-primary heading">Per Hour Rate</th>
-									<th class="bg-dark heading">Per Day Rate</th>
-									<th class="bg-black heading">Leasing</th>
+									<th class="bg-primary heading">Medium</th>
+									<th class="bg-dark heading">Large</th>
+									<th class="bg-black heading">Extra Large</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -74,7 +74,7 @@ include('includes/config.php');
 										<div class="img" style="background-image:url(images/container1.jpg);"></div>
 									</td>
 									<td class="product-name">
-										<h3>Cheverolet SUV Car</h3>
+										<h3>APL (American President Lines)</h3>
 										<p class="mb-0 rated">
 											<span>rated:</span>
 											<span class="ion-ios-star"></span>
@@ -86,35 +86,35 @@ include('includes/config.php');
 									</td>
 
 									<td class="price">
-										<p class="btn-custom"><a href="#">Rent a car</a></p>
+										<p class="btn-custom"><a href="#">Order</a></p>
 										<div class="price-rate">
 											<h3>
 												<span class="num"><small class="currency">$</small> 10.99</span>
-												<span class="per">/per hour</span>
+												<span class="per">/per Day</span>
 											</h3>
-											<span class="subheading">$3/hour fuel surcharges</span>
+											<span class="subheading">$1500/Pr Knot</span>
 										</div>
 									</td>
 
 									<td class="price">
-										<p class="btn-custom"><a href="#">Rent a car</a></p>
+										<p class="btn-custom"><a href="#">Order</a></p>
 										<div class="price-rate">
 											<h3>
 												<span class="num"><small class="currency">$</small> 60.99</span>
-												<span class="per">/per day</span>
+												<span class="per">/per Week</span>
 											</h3>
-											<span class="subheading">$3/hour fuel surcharges</span>
+											<span class="subheading">$1500/Pr Knot</span>
 										</div>
 									</td>
 
 									<td class="price">
-										<p class="btn-custom"><a href="#">Rent a car</a></p>
+										<p class="btn-custom"><a href="#">Order</a></p>
 										<div class="price-rate">
 											<h3>
 												<span class="num"><small class="currency">$</small> 995.99</span>
 												<span class="per">/per month</span>
 											</h3>
-											<span class="subheading">$3/hour fuel surcharges</span>
+											<span class="subheading">$1500/Pr Knot</span>
 										</div>
 									</td>
 								</tr><!-- END TR-->
@@ -124,7 +124,7 @@ include('includes/config.php');
 										<div class="img" style="background-image:url(images/container2.jpg);"></div>
 									</td>
 									<td class="product-name">
-										<h3>Cheverolet SUV Car</h3>
+										<h3>ONE (Ocean Network Express)</h3>
 										<p class="mb-0 rated">
 											<span>rated:</span>
 											<span class="ion-ios-star"></span>
@@ -136,35 +136,35 @@ include('includes/config.php');
 									</td>
 
 									<td class="price">
-										<p class="btn-custom"><a href="#">Rent a car</a></p>
+										<p class="btn-custom"><a href="#">Order</a></p>
 										<div class="price-rate">
 											<h3>
 												<span class="num"><small class="currency">$</small> 10.99</span>
-												<span class="per">/per hour</span>
+												<span class="per">/per Day</span>
 											</h3>
-											<span class="subheading">$3/hour fuel surcharges</span>
+											<span class="subheading">$1500/Pr Knot</span>
 										</div>
 									</td>
 
 									<td class="price">
-										<p class="btn-custom"><a href="#">Rent a car</a></p>
+										<p class="btn-custom"><a href="#">Order</a></p>
 										<div class="price-rate">
 											<h3>
 												<span class="num"><small class="currency">$</small> 60.99</span>
-												<span class="per">/per day</span>
+												<span class="per">/per Week</span>
 											</h3>
-											<span class="subheading">$3/hour fuel surcharges</span>
+											<span class="subheading">$1500/Pr Knot</span>
 										</div>
 									</td>
 
 									<td class="price">
-										<p class="btn-custom"><a href="#">Rent a car</a></p>
+										<p class="btn-custom"><a href="#">Order</a></p>
 										<div class="price-rate">
 											<h3>
 												<span class="num"><small class="currency">$</small> 995.99</span>
 												<span class="per">/per month</span>
 											</h3>
-											<span class="subheading">$3/hour fuel surcharges</span>
+											<span class="subheading">$1500/PrKnot</span>
 										</div>
 									</td>
 								</tr><!-- END TR-->
@@ -174,7 +174,7 @@ include('includes/config.php');
 										<div class="img" style="background-image:url(images/container3.jpg);"></div>
 									</td>
 									<td class="product-name">
-										<h3>Cheverolet SUV Car</h3>
+										<h3>ZIM Integrated Shipping Services</h3>
 										<p class="mb-0 rated">
 											<span>rated:</span>
 											<span class="ion-ios-star"></span>
@@ -186,35 +186,35 @@ include('includes/config.php');
 									</td>
 
 									<td class="price">
-										<p class="btn-custom"><a href="#">Rent a car</a></p>
+										<p class="btn-custom"><a href="#">Order</a></p>
 										<div class="price-rate">
 											<h3>
 												<span class="num"><small class="currency">$</small> 10.99</span>
-												<span class="per">/per hour</span>
+												<span class="per">/per Day</span>
 											</h3>
-											<span class="subheading">$3/hour fuel surcharges</span>
+											<span class="subheading">$1500/Pr Knot</span>
 										</div>
 									</td>
 
 									<td class="price">
-										<p class="btn-custom"><a href="#">Rent a car</a></p>
+										<p class="btn-custom"><a href="#">Order</a></p>
 										<div class="price-rate">
 											<h3>
 												<span class="num"><small class="currency">$</small> 60.99</span>
-												<span class="per">/per day</span>
+												<span class="per">/per Week</span>
 											</h3>
-											<span class="subheading">$3/hour fuel surcharges</span>
+											<span class="subheading">$1500/Pr Knot</span>
 										</div>
 									</td>
 
 									<td class="price">
-										<p class="btn-custom"><a href="#">Rent a car</a></p>
+										<p class="btn-custom"><a href="#">Order</a></p>
 										<div class="price-rate">
 											<h3>
 												<span class="num"><small class="currency">$</small> 995.99</span>
 												<span class="per">/per month</span>
 											</h3>
-											<span class="subheading">$3/hour fuel surcharges</span>
+											<span class="subheading">$1500/Pr Knot</span>
 										</div>
 									</td>
 								</tr><!-- END TR-->
@@ -224,7 +224,7 @@ include('includes/config.php');
 										<div class="img" style="background-image:url(images/container4.jpg);"></div>
 									</td>
 									<td class="product-name">
-										<h3>Cheverolet SUV Car</h3>
+										<h3>Yang Ming Marine Transport Corporation</h3>
 										<p class="mb-0 rated">
 											<span>rated:</span>
 											<span class="ion-ios-star"></span>
@@ -236,35 +236,35 @@ include('includes/config.php');
 									</td>
 
 									<td class="price">
-										<p class="btn-custom"><a href="#">Rent a car</a></p>
+										<p class="btn-custom"><a href="#">Order</a></p>
 										<div class="price-rate">
 											<h3>
 												<span class="num"><small class="currency">$</small> 10.99</span>
-												<span class="per">/per hour</span>
+												<span class="per">/per Day</span>
 											</h3>
-											<span class="subheading">$3/hour fuel surcharges</span>
+											<span class="subheading">$1500/Pr Knot</span>
 										</div>
 									</td>
 
 									<td class="price">
-										<p class="btn-custom"><a href="#">Rent a car</a></p>
+										<p class="btn-custom"><a href="#">Order</a></p>
 										<div class="price-rate">
 											<h3>
 												<span class="num"><small class="currency">$</small> 60.99</span>
-												<span class="per">/per day</span>
+												<span class="per">/per Week</span>
 											</h3>
-											<span class="subheading">$3/hour fuel surcharges</span>
+											<span class="subheading">$1500/Pr Knot</span>
 										</div>
 									</td>
 
 									<td class="price">
-										<p class="btn-custom"><a href="#">Rent a car</a></p>
+										<p class="btn-custom"><a href="#">Order</a></p>
 										<div class="price-rate">
 											<h3>
 												<span class="num"><small class="currency">$</small> 995.99</span>
 												<span class="per">/per month</span>
 											</h3>
-											<span class="subheading">$3/hour fuel surcharges</span>
+											<span class="subheading">$1500/Pr Knot</span>
 										</div>
 									</td>
 								</tr><!-- END TR-->
@@ -275,7 +275,7 @@ include('includes/config.php');
 										<div class="img" style="background-image:url(images/container5.jpg);"></div>
 									</td>
 									<td class="product-name">
-										<h3>Cheverolet SUV Car</h3>
+										<h3>Hapag-Lloyd</h3>
 										<p class="mb-0 rated">
 											<span>rated:</span>
 											<span class="ion-ios-star"></span>
@@ -287,35 +287,35 @@ include('includes/config.php');
 									</td>
 
 									<td class="price">
-										<p class="btn-custom"><a href="#">Rent a car</a></p>
+										<p class="btn-custom"><a href="#">Order</a></p>
 										<div class="price-rate">
 											<h3>
 												<span class="num"><small class="currency">$</small> 10.99</span>
-												<span class="per">/per hour</span>
+												<span class="per">/per Day</span>
 											</h3>
-											<span class="subheading">$3/hour fuel surcharges</span>
+											<span class="subheading">$1500/Pr Knot</span>
 										</div>
 									</td>
 
 									<td class="price">
-										<p class="btn-custom"><a href="#">Rent a car</a></p>
+										<p class="btn-custom"><a href="#">Order</a></p>
 										<div class="price-rate">
 											<h3>
 												<span class="num"><small class="currency">$</small> 60.99</span>
-												<span class="per">/per day</span>
+												<span class="per">/per Week</span>
 											</h3>
-											<span class="subheading">$3/hour fuel surcharges</span>
+											<span class="subheading">$1500/Pr Knot</span>
 										</div>
 									</td>
 
 									<td class="price">
-										<p class="btn-custom"><a href="#">Rent a car</a></p>
+										<p class="btn-custom"><a href="#">Order</a></p>
 										<div class="price-rate">
 											<h3>
 												<span class="num"><small class="currency">$</small> 995.99</span>
 												<span class="per">/per month</span>
 											</h3>
-											<span class="subheading">$3/hour fuel surcharges</span>
+											<span class="subheading">$1500/Pr Knot</span>
 										</div>
 									</td>
 								</tr><!-- END TR-->
@@ -326,7 +326,7 @@ include('includes/config.php');
 										<div class="img" style="background-image:url(images/container6.jpg);"></div>
 									</td>
 									<td class="product-name">
-										<h3>Cheverolet SUV Car</h3>
+										<h3>CMA CGM</h3>
 										<p class="mb-0 rated">
 											<span>rated:</span>
 											<span class="ion-ios-star"></span>
@@ -338,35 +338,35 @@ include('includes/config.php');
 									</td>
 
 									<td class="price">
-										<p class="btn-custom"><a href="#">Rent a car</a></p>
+										<p class="btn-custom"><a href="#">Order</a></p>
 										<div class="price-rate">
 											<h3>
 												<span class="num"><small class="currency">$</small> 10.99</span>
-												<span class="per">/per hour</span>
+												<span class="per">/per Day</span>
 											</h3>
-											<span class="subheading">$3/hour fuel surcharges</span>
+											<span class="subheading">$1500/Pr Day</span>
 										</div>
 									</td>
 
 									<td class="price">
-										<p class="btn-custom"><a href="#">Rent a car</a></p>
+										<p class="btn-custom"><a href="#">Order</a></p>
 										<div class="price-rate">
 											<h3>
 												<span class="num"><small class="currency">$</small> 60.99</span>
-												<span class="per">/per day</span>
+												<span class="per">/per Week</span>
 											</h3>
-											<span class="subheading">$3/hour fuel surcharges</span>
+											<span class="subheading">$1500/Pr Day</span>
 										</div>
 									</td>
 
 									<td class="price">
-										<p class="btn-custom"><a href="#">Rent a car</a></p>
+										<p class="btn-custom"><a href="#">Order</a></p>
 										<div class="price-rate">
 											<h3>
 												<span class="num"><small class="currency">$</small> 995.99</span>
 												<span class="per">/per month</span>
 											</h3>
-											<span class="subheading">$3/hour fuel surcharges</span>
+											<span class="subheading">$1500/Pr Day</span>
 										</div>
 									</td>
 								</tr><!-- END TR-->
