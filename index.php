@@ -165,9 +165,9 @@ include('includes/config.php');
 			<div class="row">
 				<div class="col-md-3">
 					<div class="car-wrap ftco-animate">
-						<div class="img d-flex align-items-end" style="background-image: url(images/car-1.jpg);">
+						<div class="img d-flex align-items-end" style="background-image: url(images/container1.jpg);">
 							<div class="price-wrap d-flex">
-								<span class="rate">$25</span>
+								<span class="rate">$1000</span>
 								<p class="from-day">
 									<span>From</span>
 									<span>/Day</span>
@@ -175,8 +175,8 @@ include('includes/config.php');
 							</div>
 						</div>
 						<div class="text p-4 text-center">
-							<h2 class="mb-0"><a href="#">Mercedes Grand Sedan</a></h2>
-							<span>Audi</span>
+							<h2 class="mb-0"><a href="#">APL (American President Lines)</a></h2>
+							<br>
 							<p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book
 									now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
 						</div>
@@ -184,9 +184,9 @@ include('includes/config.php');
 				</div>
 				<div class="col-md-3">
 					<div class="car-wrap ftco-animate">
-						<div class="img d-flex align-items-end" style="background-image: url(images/car-2.jpg);">
+						<div class="img d-flex align-items-end" style="background-image: url(images/container2.jpg);">
 							<div class="price-wrap d-flex">
-								<span class="rate">$25</span>
+								<span class="rate">$750</span>
 								<p class="from-day">
 									<span>From</span>
 									<span>/Day</span>
@@ -194,8 +194,8 @@ include('includes/config.php');
 							</div>
 						</div>
 						<div class="text p-4 text-center">
-							<h2 class="mb-0"><a href="#">Mercedes Grand Sedan</a></h2>
-							<span>Ford</span>
+							<h2 class="mb-0"><a href="#">ONE (Ocean Network Express)</a></h2>
+							<br>
 							<p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book
 									now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
 						</div>
@@ -203,9 +203,9 @@ include('includes/config.php');
 				</div>
 				<div class="col-md-3">
 					<div class="car-wrap ftco-animate">
-						<div class="img d-flex align-items-end" style="background-image: url(images/car-3.jpg);">
+						<div class="img d-flex align-items-end" style="background-image: url(images/container3.jpg);">
 							<div class="price-wrap d-flex">
-								<span class="rate">$25</span>
+								<span class="rate">$1200</span>
 								<p class="from-day">
 									<span>From</span>
 									<span>/Day</span>
@@ -213,8 +213,8 @@ include('includes/config.php');
 							</div>
 						</div>
 						<div class="text p-4 text-center">
-							<h2 class="mb-0"><a href="#">Mercedes Grand Sedan</a></h2>
-							<span>Cheverolet</span>
+							<h2 class="mb-0"><a href="#">ZIM Integrated Shipping Services</a></h2>
+							<br>
 							<p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book
 									now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
 						</div>
@@ -222,9 +222,9 @@ include('includes/config.php');
 				</div>
 				<div class="col-md-3">
 					<div class="car-wrap ftco-animate">
-						<div class="img d-flex align-items-end" style="background-image: url(images/car-4.jpg);">
+						<div class="img d-flex align-items-end" style="background-image: url(images/container4.jpg);">
 							<div class="price-wrap d-flex">
-								<span class="rate">$25</span>
+								<span class="rate">$950</span>
 								<p class="from-day">
 									<span>From</span>
 									<span>/Day</span>
@@ -232,8 +232,8 @@ include('includes/config.php');
 							</div>
 						</div>
 						<div class="text p-4 text-center">
-							<h2 class="mb-0"><a href="#">Mercedes Grand Sedan</a></h2>
-							<span>Mercedes</span>
+							<h2 class="mb-0"><a href="#">Yang Ming Marine Transport Corporation</a></h2>
+						<br>
 							<p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book
 									now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
 						</div>
@@ -242,9 +242,9 @@ include('includes/config.php');
 
 				<div class="col-md-3">
 					<div class="car-wrap ftco-animate">
-						<div class="img d-flex align-items-end" style="background-image: url(images/car-5.jpg);">
+						<div class="img d-flex align-items-end" style="background-image: url(images/container5.jpg);">
 							<div class="price-wrap d-flex">
-								<span class="rate">$25</span>
+								<span class="rate">$1500</span>
 								<p class="from-day">
 									<span>From</span>
 									<span>/Day</span>
@@ -252,8 +252,8 @@ include('includes/config.php');
 							</div>
 						</div>
 						<div class="text p-4 text-center">
-							<h2 class="mb-0"><a href="#">Mercedes Grand Sedan</a></h2>
-							<span>Audi</span>
+							<h2 class="mb-0"><a href="#">Hapag-Lloyd</a></h2>
+<br>
 							<p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book
 									now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
 						</div>
@@ -261,9 +261,9 @@ include('includes/config.php');
 				</div>
 				<div class="col-md-3">
 					<div class="car-wrap ftco-animate">
-						<div class="img d-flex align-items-end" style="background-image: url(images/car-6.jpg);">
+						<div class="img d-flex align-items-end" style="background-image: url(images/container6.jpg);">
 							<div class="price-wrap d-flex">
-								<span class="rate">$25</span>
+								<span class="rate">$1350</span>
 								<p class="from-day">
 									<span>From</span>
 									<span>/Day</span>
@@ -271,8 +271,8 @@ include('includes/config.php');
 							</div>
 						</div>
 						<div class="text p-4 text-center">
-							<h2 class="mb-0"><a href="#">Mercedes Grand Sedan</a></h2>
-							<span>Ford</span>
+							<h2 class="mb-0"><a href="#">CMA CGM</a></h2>
+							<br>
 							<p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book
 									now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
 						</div>
@@ -280,9 +280,9 @@ include('includes/config.php');
 				</div>
 				<div class="col-md-3">
 					<div class="car-wrap ftco-animate">
-						<div class="img d-flex align-items-end" style="background-image: url(images/car-7.jpg);">
+						<div class="img d-flex align-items-end" style="background-image: url(images/container7.jpeg);">
 							<div class="price-wrap d-flex">
-								<span class="rate">$25</span>
+								<span class="rate">$1000</span>
 								<p class="from-day">
 									<span>From</span>
 									<span>/Day</span>
@@ -290,8 +290,8 @@ include('includes/config.php');
 							</div>
 						</div>
 						<div class="text p-4 text-center">
-							<h2 class="mb-0"><a href="#">Mercedes Grand Sedan</a></h2>
-							<span>Cheverolet</span>
+							<h2 class="mb-0"><a href="#">Evergreen Marine Services Corporation</a></h2>
+							<br>
 							<p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book
 									now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
 						</div>
@@ -299,9 +299,9 @@ include('includes/config.php');
 				</div>
 				<div class="col-md-3">
 					<div class="car-wrap ftco-animate">
-						<div class="img d-flex align-items-end" style="background-image: url(images/car-8.jpg);">
+						<div class="img d-flex align-items-end" style="background-image: url(images/container8.jpg);">
 							<div class="price-wrap d-flex">
-								<span class="rate">$25</span>
+								<span class="rate">$1350</span>
 								<p class="from-day">
 									<span>From</span>
 									<span>/Day</span>
@@ -309,8 +309,8 @@ include('includes/config.php');
 							</div>
 						</div>
 						<div class="text p-4 text-center">
-							<h2 class="mb-0"><a href="#">Mercedes Grand Sedan</a></h2>
-							<span>Mercedes</span>
+							<h2 class="mb-0"><a href="#">UASC (United Arab Shipping Company)</a></h2>
+							<br>
 							<p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book
 									now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
 						</div>

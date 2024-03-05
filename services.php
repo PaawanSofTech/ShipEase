@@ -60,7 +60,7 @@ include('includes/config.php');
 			<div class="row">
 				<div class="col-md-3">
 					<div class="car-wrap ftco-animate">
-						<div class="img d-flex align-items-end" style="background-image: url(images/car-1.jpg);">
+						<div class="img d-flex align-items-end" style="background-image: url(images/container1.jpg);">
 							<div class="price-wrap d-flex">
 								<span class="rate">$25</span>
 								<p class="from-day">
@@ -79,7 +79,7 @@ include('includes/config.php');
 				</div>
 				<div class="col-md-3">
 					<div class="car-wrap ftco-animate">
-						<div class="img d-flex align-items-end" style="background-image: url(images/car-2.jpg);">
+						<div class="img d-flex align-items-end" style="background-image: url(images/container2.jpg);">
 							<div class="price-wrap d-flex">
 								<span class="rate">$25</span>
 								<p class="from-day">
@@ -98,7 +98,7 @@ include('includes/config.php');
 				</div>
 				<div class="col-md-3">
 					<div class="car-wrap ftco-animate">
-						<div class="img d-flex align-items-end" style="background-image: url(images/car-3.jpg);">
+						<div class="img d-flex align-items-end" style="background-image: url(images/container3.jpg);">
 							<div class="price-wrap d-flex">
 								<span class="rate">$25</span>
 								<p class="from-day">
@@ -117,7 +117,7 @@ include('includes/config.php');
 				</div>
 				<div class="col-md-3">
 					<div class="car-wrap ftco-animate">
-						<div class="img d-flex align-items-end" style="background-image: url(images/car-4.jpg);">
+						<div class="img d-flex align-items-end" style="background-image: url(images/container4.jpg);">
 							<div class="price-wrap d-flex">
 								<span class="rate">$25</span>
 								<p class="from-day">
@@ -137,7 +137,7 @@ include('includes/config.php');
 
 				<div class="col-md-3">
 					<div class="car-wrap ftco-animate">
-						<div class="img d-flex align-items-end" style="background-image: url(images/car-5.jpg);">
+						<div class="img d-flex align-items-end" style="background-image: url(images/container5.jpg);">
 							<div class="price-wrap d-flex">
 								<span class="rate">$25</span>
 								<p class="from-day">
@@ -156,7 +156,7 @@ include('includes/config.php');
 				</div>
 				<div class="col-md-3">
 					<div class="car-wrap ftco-animate">
-						<div class="img d-flex align-items-end" style="background-image: url(images/car-6.jpg);">
+						<div class="img d-flex align-items-end" style="background-image: url(images/container6.jpg);">
 							<div class="price-wrap d-flex">
 								<span class="rate">$25</span>
 								<p class="from-day">
@@ -175,7 +175,7 @@ include('includes/config.php');
 				</div>
 				<div class="col-md-3">
 					<div class="car-wrap ftco-animate">
-						<div class="img d-flex align-items-end" style="background-image: url(images/car-7.jpg);">
+						<div class="img d-flex align-items-end" style="background-image: url(images/container7.jpeg);">
 							<div class="price-wrap d-flex">
 								<span class="rate">$25</span>
 								<p class="from-day">
@@ -194,7 +194,7 @@ include('includes/config.php');
 				</div>
 				<div class="col-md-3">
 					<div class="car-wrap ftco-animate">
-						<div class="img d-flex align-items-end" style="background-image: url(images/car-8.jpg);">
+						<div class="img d-flex align-items-end" style="background-image: url(images/container8.jpg);">
 							<div class="price-wrap d-flex">
 								<span class="rate">$25</span>
 								<p class="from-day">
@@ -214,7 +214,7 @@ include('includes/config.php');
 
 				<div class="col-md-3">
 					<div class="car-wrap ftco-animate">
-						<div class="img d-flex align-items-end" style="background-image: url(images/car-9.jpg);">
+						<div class="img d-flex align-items-end" style="background-image: url(images/container1.jpg);">
 							<div class="price-wrap d-flex">
 								<span class="rate">$25</span>
 								<p class="from-day">
@@ -233,7 +233,7 @@ include('includes/config.php');
 				</div>
 				<div class="col-md-3">
 					<div class="car-wrap ftco-animate">
-						<div class="img d-flex align-items-end" style="background-image: url(images/car-10.jpg);">
+						<div class="img d-flex align-items-end" style="background-image: url(images/container2.jpg);">
 							<div class="price-wrap d-flex">
 								<span class="rate">$25</span>
 								<p class="from-day">
@@ -252,7 +252,7 @@ include('includes/config.php');
 				</div>
 				<div class="col-md-3">
 					<div class="car-wrap ftco-animate">
-						<div class="img d-flex align-items-end" style="background-image: url(images/car-11.jpg);">
+						<div class="img d-flex align-items-end" style="background-image: url(images/container3.jpg);">
 							<div class="price-wrap d-flex">
 								<span class="rate">$25</span>
 								<p class="from-day">
@@ -271,7 +271,7 @@ include('includes/config.php');
 				</div>
 				<div class="col-md-3">
 					<div class="car-wrap ftco-animate">
-						<div class="img d-flex align-items-end" style="background-image: url(images/car-12.jpg);">
+						<div class="img d-flex align-items-end" style="background-image: url(images/container4.jpg);">
 							<div class="price-wrap d-flex">
 								<span class="rate">$25</span>
 								<p class="from-day">
